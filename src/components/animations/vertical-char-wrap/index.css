@@ -1,4 +1,4 @@
-.char-rise-container {
+.vchar-wrap-container {
   display: inline-flex;
   flex-direction: row;
   overflow-y: hidden;
@@ -14,12 +14,12 @@
   transition: transform 300ms ease-out, opacity 300ms ease-out;
 }
 
-.char-rise-start {
+.vchar-wrap-start {
   opacity: 1;
   transform: translateY(0%);
 }
 
-.char-rise-end {
+.vchar-wrap-end {
   position: absolute;
   inset: 0;
 
@@ -28,12 +28,12 @@
 }
 
 /* Animation Styling */
-.char-rise-container:hover .char-rise-start {
+.vchar-wrap-container:hover .vchar-wrap-start {
   opacity: 0;
   transform: translateY(-100%);
 }
 
-.char-rise-container:hover .char-rise-end {
+.vchar-wrap-container:hover .vchar-wrap-end {
   opacity: 1;
   transform: translateY(0%);
 }
