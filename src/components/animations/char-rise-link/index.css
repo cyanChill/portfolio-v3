@@ -1,0 +1,39 @@
+.char-rise-container {
+  display: inline-flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  text-decoration: none;
+}
+
+.letterContainer {
+  position: relative;
+}
+
+.letter {
+  display: inline-block;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+}
+
+.char-rise-start {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.char-rise-end {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/* Animation Styling */
+.char-rise-container:hover .char-rise-start {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.char-rise-container:hover .char-rise-end {
+  opacity: 1;
+  transform: translateY(0%);
+}
