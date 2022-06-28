@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 import logo from "../../assets/logo.png";
-import "./navbar.css";
+import "./index.css";
 
 const Navbar = () => {
   const navToggleRef = useRef(null);
@@ -20,9 +20,9 @@ const Navbar = () => {
 
   return (
     <header className="primary-header flex">
-      <div>
+      <button className="logo-btn" onClick={() => window.scrollTo(0, 0)}>
         <img className="logo" src={logo} alt="" />
-      </div>
+      </button>
 
       <button
         class="mobile-nav-toggle"
