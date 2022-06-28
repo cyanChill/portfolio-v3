@@ -3,35 +3,25 @@
     - We input a string and when we hover over the string, each letter will
       translate up and then come from the bottom, returning the letter to
       it's original position
-    - We have 2 props:
+    - We have 1 prop:
       1. text - The string that we'll apply the animation to
-      2. className - The classes applied to this component externally
 */
 
 import { v4 as uuidv4 } from "uuid";
 
-import "./index.css";
+import { LetterContainer } from "../animation.styles";
+import { AnimationContainer, AnimStartLetter, AnimEndLetter } from "./styles";
 
-const VCharWrap = ({ text, className }) => {
+const VCharWrap = ({ text }) => {
   return (
-    <div className={`vchar-wrap-container ${className}`}>
+    <AnimationContainer>
       {text.split("").map((char, charNum) => (
-        <div className="letterContainer" key={uuidv4()}>
-          <span
-            className="letter vchar-wrap-start"
-            style={{ transitionDelay: `${charNum * 50}ms` }}
-          >
-            {char}
-          </span>
-          <span
-            className="letter vchar-wrap-end"
-            style={{ transitionDelay: `${charNum * 50}ms` }}
-          >
-            {char}
-          </span>
-        </div>
+        <LetterContainer key={uuidv4()}>
+          <AnimStartLetter delay={charNum * 50}>{char}</AnimStartLetter>
+          <AnimEndLetter delay={charNum * 50}>{char}</AnimEndLetter>
+        </LetterContainer>
       ))}
-    </div>
+    </AnimationContainer>
   );
 };
 
