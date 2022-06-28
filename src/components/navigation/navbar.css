@@ -1,0 +1,106 @@
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 2rem;
+  margin: 1rem;
+}
+
+/* Nav toggle button */
+.mobile-nav-toggle {
+  width: 2rem;
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+
+  background-color: transparent;
+  background-image: url("/src/assets/icon-hamburger.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] {
+  background-image: url("/src/assets/icon-close.svg");
+}
+
+/* Navigation Items Container */
+.primary-navigation {
+  --primary: white;
+  --gap: 2rem;
+
+  list-style: none;
+  margin: 0;
+  padding: min(30vh, 10rem) 2em;
+
+  position: fixed;
+  z-index: 1000;
+  inset: 0 0 0 30%;
+  flex-direction: column;
+
+  background: hsl(0 0% 0% / 0.5);
+
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .primary-navigation {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem); /* Not supported on all browsers */
+  }
+}
+
+.primary-navigation[data-visible="true"] {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.primary-navigation a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+/* Span holding the #s */
+.primary-navigation a > [aria-hidden="true"] {
+  display: inline-block;
+  margin-inline-end: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (min-width: 568px) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  .primary-navigation {
+    --gap: clamp(1rem, 5vw, 3rem);
+
+    flex-direction: row;
+    position: static;
+    transform: translateX(0%);
+
+    padding: 0;
+    padding-block: 1rem;
+    padding-inline: clamp(3rem, 8vw, 10rem);
+
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  .primary-navigation a {
+    font-size: 1.25rem;
+  }
+
+  .primary-navigation a > [aria-hidden="true"] {
+    display: none;
+  }
+}
