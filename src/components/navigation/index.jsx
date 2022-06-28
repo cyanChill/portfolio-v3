@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import "./index.css";
 
 const Navbar = () => {
@@ -25,19 +25,19 @@ const Navbar = () => {
       </button>
 
       <button
-        class="mobile-nav-toggle"
+        className="mobile-nav-toggle"
         aria-controls="primary-navigation"
         aria-expanded="false"
         onClick={toggleNav}
         ref={navToggleRef}
       >
-        <span class="sr-only">Menu</span>
+        <span className="sr-only">Menu</span>
       </button>
 
       <nav>
         <ul
           id="primary-navigation"
-          class="primary-navigation flex"
+          className="primary-navigation flex"
           data-visible="false"
           ref={navMenu}
         >
