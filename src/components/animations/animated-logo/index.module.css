@@ -10,7 +10,7 @@
 
 .svg path,
 .svg line {
-  stroke: var(--primary);
+  stroke: hsl(var(--primary));
 }
 
 .cube {

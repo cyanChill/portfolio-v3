@@ -1,20 +1,19 @@
 #hero {
   width: 100%;
-  max-width: var(--reasonable-max-app-width);
-  display: flex;
-  align-items: center;
   position: relative;
 
-  padding: 4.5rem 2rem;
+  padding: 4.5rem 2rem 3rem 2rem;
   font-size: clamp(3rem, 15vw, 7rem);
-  color: var(--on-background-dark);
+  font-weight: 600;
+  color: hsl(var(--on-background-dark));
 }
 
+/* Bottom Border */
 #hero:after {
   content: "";
   position: absolute;
   bottom: 0;
-  background-color: var(--on-background);
+  background-color: hsl(var(--on-background));
   left: 50%;
   height: 1px;
   width: calc(100% - 1.5rem);
@@ -42,7 +41,7 @@
 @media (min-width: 568px) {
   #hero {
     padding-inline: 3rem;
-    font-size: clamp(5rem, 10vw, 10rem);
+    font-size: clamp(4rem, 12.5vw, 10rem);
   }
 
   .word {

@@ -5,13 +5,13 @@
 
   --reasonable-max-app-width: 75rem;
 
-  --background: hsl(223, 41%, 94%);
-  --on-background: hsl(230, 3%, 35%);
-  --on-background-dark: hsl(223, 26%, 13%);
+  --background: 223 41% 94%;
+  --on-background: 230 3% 35%;
+  --on-background-dark: 223 26% 13%;
 
-  --primary: hsl(202, 100%, 53%);
-  --secondary: hsl(43, 100%, 66%);
-  --secondary-accent: hsl(32, 100%, 64%);
+  --primary: 202 100% 53%;
+  --secondary: 43 100% 66%;
+  --secondary-accent: 32 100% 64%;
 }
 
 *,
@@ -32,7 +32,7 @@ body {
   font-family: var(--font-family);
 
   /* TODO: Temporary */
-  background-color: var(--background);
+  background-color: hsl(var(--background));
 }
 
 #root {
