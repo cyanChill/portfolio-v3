@@ -5,13 +5,18 @@
 
   --reasonable-max-app-width: 75rem;
 
-  --background: 223 41% 94%;
+  --background: var(--off-white);
   --on-background: 230 3% 35%;
   --on-background-dark: 223 26% 13%;
 
   --primary: 202 100% 53%;
   --secondary: 43 100% 66%;
   --secondary-accent: 32 100% 64%;
+
+  --off-white: 223 41% 94%;
+
+  --success: 115 100% 76%;
+  --error: 0 100% 67%;
 }
 
 *,

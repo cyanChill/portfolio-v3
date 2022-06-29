@@ -96,7 +96,6 @@
   align-items: center;
   gap: 1rem;
 
-  padding: 0;
   padding: 0.35rem 0.65rem;
   font-size: 1.25rem;
   border: 0;
@@ -107,6 +106,49 @@
 .sendIcon {
   width: 2rem;
   height: 2rem;
+}
+
+/* Alerts Container Styling */
+.alert {
+  visibility: hidden;
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 300ms ease-in-out;
+  z-index: 999;
+
+  opacity: 0;
+  padding: 0.5rem 1rem;
+  outline: 1px solid hsl(var(--on-background) / 0.5);
+  background-color: hsl(var(--off-white) / 1);
+}
+
+.alert.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.closeBtn {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+.success {
+  border-left: 0.75rem solid hsl(var(--success));
+}
+
+.error {
+  border-left: 0.75rem solid hsl(var(--error));
 }
 
 @media (min-width: 568px) {
