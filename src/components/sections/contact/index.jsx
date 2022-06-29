@@ -25,6 +25,8 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
       await fetch("/", {
         method: "POST",
@@ -37,8 +39,6 @@ const Contact = () => {
     } catch (err) {
       setAlert({ type: "error", message: err });
     }
-
-    e.preventDefault();
   };
 
   return (
