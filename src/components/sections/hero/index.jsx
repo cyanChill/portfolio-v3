@@ -12,7 +12,11 @@ const Hero = () => {
       <div className={styles.content}>
         {Hero_Words.map((word, idx) => {
           return (
-            <div className={styles[`padd-${idx}`]} key={uuidv4()}>
+            <div
+              className={styles.word}
+              style={{ "--padd": `${idx * 0.5}ch` }}
+              key={uuidv4()}
+            >
               <WordRiseAnim
                 text={word}
                 delayMS={250 * (idx + 1)}

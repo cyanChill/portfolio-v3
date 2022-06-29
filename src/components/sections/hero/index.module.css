@@ -35,20 +35,8 @@
   max-height: max-content;
 }
 
-.padd-0 {
-  padding-left: 0ch;
-}
-
-.padd-1 {
-  padding-left: 0.5ch;
-}
-
-.padd-2 {
-  padding-left: 1ch;
-}
-
-.padd-3 {
-  padding-left: 1.5ch;
+.word {
+  padding-left: var(--padd, 0ch);
 }
 
 @media (min-width: 568px) {
@@ -57,19 +45,7 @@
     font-size: clamp(5rem, 10vw, 10rem);
   }
 
-  .padd-0 {
-    padding-left: 0ch;
-  }
-
-  .padd-1 {
-    padding-left: 1ch;
-  }
-
-  .padd-2 {
-    padding-left: 2ch;
-  }
-
-  .padd-3 {
-    padding-left: 3ch;
+  .word {
+    padding-left: calc(var(--padd, 0ch) * 2);
   }
 }
