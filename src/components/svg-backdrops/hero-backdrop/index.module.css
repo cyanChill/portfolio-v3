@@ -11,3 +11,43 @@
 .dark-color line {
   stroke: var(--secondary-accent);
 }
+
+.light-color > g,
+.dark-color > g {
+  animation-name: slide;
+  animation-duration: var(--slide-dur, 10.5s);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+}
+
+.light-color > g > line:first-child,
+.dark-color > g > line:first-child {
+  animation-name: grow;
+  animation-duration: var(--grow-dur, 10.5s);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(0.5%);
+  }
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: scaleX(100%);
+  }
+  30% {
+    transform: scaleX(100.5%);
+  }
+  60% {
+    transform: scaleX(99.5%);
+  }
+}
