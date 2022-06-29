@@ -16,7 +16,7 @@
   bottom: 0;
   background-color: var(--on-background);
   left: 50%;
-  height: 2px;
+  height: 1px;
   width: calc(100% - 1.5rem);
   transform: translateX(-50%);
 }
