@@ -5,14 +5,19 @@ export const BaseAnimationContainer = styled.div`
   flex-direction: row;
   overflow-y: hidden;
   text-decoration: none;
-`;
 
-export const LetterContainer = styled.div`
   position: relative;
 `;
 
-export const Letter = styled.span`
+export const AnimatedBase = styled.span`
   display: inline-block;
+
+  transition: transform ${({ duration }) => `${duration || "300"}ms`}
+    ${({ timingFunc }) => `${timingFunc || "ease-out"}`} !important;
+  animation-duration: ${({ duration }) => `${duration || "300"}ms`} !important;
+
+  transition-delay: ${({ delay }) => `${delay || 0}ms`} !important;
+  animation-delay: ${({ delay }) => `${delay || 0}ms`} !important;
 `;
 
 /* 
@@ -20,13 +25,20 @@ export const Letter = styled.span`
               Animation Keyframes:
   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 */
-export const riseAnimation = keyframes` 
+export const riseBottomAnimation = keyframes` 
   from {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(100%)  skewY(50deg);
   }
   to {
-    opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(0%) skewY(0);
+  }
+`;
+
+export const dropTopAnimation = keyframes`
+  from {
+    transform: translateY(-100%) skewY(50deg)
+  }
+  to {
+    transform: translateY(0%) skewY(0);
   }
 `;
