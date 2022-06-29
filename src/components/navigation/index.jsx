@@ -21,7 +21,11 @@ const Navbar = () => {
 
   return (
     <header className="primary-header flex">
-      <button className="logo-btn" onClick={() => window.scrollTo(0, 0)}>
+      <button
+        className="logo-btn"
+        onClick={() => window.scrollTo(0, 0)}
+        aria-label="Back to Top"
+      >
         <AnimatedLogo1 />
       </button>
 
@@ -44,19 +48,19 @@ const Navbar = () => {
         >
           <li>
             <a href="#about">
-              <span aria-hidden="true">00</span>
+              <span aria-hidden="true">01.</span>
               <WordDropAnim text="About" delay={300} durationMS={450} />
             </a>
           </li>
           <li>
             <a href="#projects">
-              <span aria-hidden="true">01</span>
+              <span aria-hidden="true">02.</span>
               <WordDropAnim text="Projects" delayMS={400} durationMS={450} />
             </a>
           </li>
           <li>
             <a href="#contact">
-              <span aria-hidden="true">02</span>
+              <span aria-hidden="true">03.</span>
               <WordDropAnim text="Contact" delayMS={650} durationMS={450} />
             </a>
           </li>

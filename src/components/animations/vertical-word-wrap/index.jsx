@@ -8,14 +8,14 @@
       2. duration (optional) - How long the animation will take to complete
 */
 
-import { AnimationContainer, WordWrap } from "./styles";
+import { AnimationContainer, WordWrapStart, WordWrapEnd } from "./styles";
 
-const VWordWrapAnim = ({ text, durationMS = 300 }) => {
+const VWordWrapAnim = ({ text, durationMS = 300, children }) => {
   return (
     <AnimationContainer>
-      <WordWrap duration={durationMS} content={text}>
-        {text}
-      </WordWrap>
+      <WordWrapStart duration={durationMS}>{text}</WordWrapStart>
+      <WordWrapEnd duration={durationMS}>{text}</WordWrapEnd>
+      <div>{children}</div>
     </AnimationContainer>
   );
 };

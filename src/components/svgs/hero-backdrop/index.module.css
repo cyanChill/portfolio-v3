@@ -5,11 +5,11 @@
 }
 
 .light-color line {
-  stroke: var(--secondary);
+  stroke: hsl(var(--secondary));
 }
 
 .dark-color line {
-  stroke: var(--secondary-accent);
+  stroke: hsl(var(--secondary-accent));
 }
 
 .light-color > g,
