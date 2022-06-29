@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
-import logo from "../../assets/logo.svg";
+import { AnimatedLogo1 } from "../animations/animated-logo";
+import { WordDropAnim } from "../animations/word-rise";
 import "./index.css";
 
 const Navbar = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
   return (
     <header className="primary-header flex">
       <button className="logo-btn" onClick={() => window.scrollTo(0, 0)}>
-        <img className="logo" src={logo} alt="" />
+        <AnimatedLogo1 />
       </button>
 
       <button
@@ -43,17 +44,20 @@ const Navbar = () => {
         >
           <li>
             <a href="#about">
-              <span aria-hidden="true">00</span>About
+              <span aria-hidden="true">00</span>
+              <WordDropAnim text="About" delay={300} durationMS={450} />
             </a>
           </li>
           <li>
             <a href="#projects">
-              <span aria-hidden="true">01</span>Projects
+              <span aria-hidden="true">01</span>
+              <WordDropAnim text="Projects" delayMS={400} durationMS={450} />
             </a>
           </li>
           <li>
             <a href="#contact">
-              <span aria-hidden="true">02</span>Contact
+              <span aria-hidden="true">02</span>
+              <WordDropAnim text="Contact" delayMS={650} durationMS={450} />
             </a>
           </li>
         </ul>

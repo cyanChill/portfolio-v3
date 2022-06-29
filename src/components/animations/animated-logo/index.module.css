@@ -1,0 +1,74 @@
+.svg {
+  display: inline-block;
+  transition: transform 300ms ease-in-out;
+  transform-origin: center;
+}
+
+.svg:hover {
+  transform: scale(1.15);
+}
+
+.svg path,
+.svg line {
+  stroke: var(--primary);
+}
+
+.cube {
+  opacity: 0;
+}
+
+.cubeTop {
+  animation: slideFromTop 1s forwards;
+}
+
+.cubeBottomLeft {
+  animation: slideFromLeft 1s forwards;
+  animation-delay: 200ms;
+}
+
+.cubeBottomRight {
+  animation: slideFromRight 1s forwards;
+  animation-delay: 400ms;
+}
+
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transfrom: translateY(0%);
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transfrom: translateX(0%);
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transfrom: translateX(0%);
+  }
+}

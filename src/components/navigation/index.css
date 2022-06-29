@@ -6,25 +6,17 @@
 
   align-items: center;
   justify-content: space-between;
+  z-index: 1000;
 }
 
 .logo-btn {
+  cursor: pointer;
   background-color: transparent;
   border: 0;
   padding: 0;
-  margin: 0;
+  margin: 1rem;
 
   transition: transform 300ms ease-in-out;
-}
-
-.logo-btn:hover {
-  cursor: pointer;
-  transform: scale(1.15);
-}
-
-.logo {
-  width: 2.5rem;
-  margin: 1rem;
 }
 
 /* Nav toggle button */
@@ -38,19 +30,18 @@
   z-index: 9999;
 
   background-color: transparent;
-  background-image: url("/src/assets/icon-hamburger.svg");
+  background-image: url("/public/images/icon-hamburger.svg");
   background-position: center;
   background-repeat: no-repeat;
   border: 0;
 }
 
 .mobile-nav-toggle[aria-expanded="true"] {
-  background-image: url("/src/assets/icon-close.svg");
+  background-image: url("/public/images/icon-close.svg");
 }
 
 /* Navigation Items Container */
 .primary-navigation {
-  --primary: white;
   --gap: 2rem;
 
   list-style: none;
@@ -69,10 +60,10 @@
   transition: transform 300ms ease-out, opacity 300ms ease-out;
 }
 
-@supports (backdrop-filter: blur(1rem)) {
+@supports (backdrop-filter: blur(2rem)) {
   .primary-navigation {
-    background: hsl(0 0% 100% / 0.1);
-    backdrop-filter: blur(1rem); /* Not supported on all browsers */
+    background: hsl(0 0% 60% / 0.1);
+    backdrop-filter: blur(2rem); /* Not supported on all browsers */
   }
 }
 
@@ -84,7 +75,7 @@
 .primary-navigation a {
   font-size: 2rem;
   text-decoration: none;
-  color: var(--primary);
+  color: var(--on-background);
 }
 
 /* Span holding the #s */
@@ -93,6 +84,14 @@
   margin-inline-end: 0.5rem;
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+.primary-navigation li {
+  transition: transform 300ms ease-out;
+}
+
+.primary-navigation li:hover {
+  transform: translateY(-20%);
 }
 
 @media (min-width: 568px) {
@@ -108,11 +107,17 @@
     transform: translateX(0%);
 
     padding: 0;
-    padding-block: 1rem;
-    padding-inline: clamp(3rem, 8vw, 10rem);
+    padding: 1rem 2rem;
 
+    background: none;
     background-color: transparent;
     opacity: 1;
+  }
+
+  @supports (backdrop-filter: blur(0)) {
+    .primary-navigation {
+      backdrop-filter: blur(0);
+    }
   }
 
   .primary-navigation a {
