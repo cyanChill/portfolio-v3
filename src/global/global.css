@@ -3,9 +3,15 @@
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 
-  --reasonable-max-app-width: 60rem;
+  --reasonable-max-app-width: 65rem;
 
-  --primary: black;
+  --background: hsl(223, 41%, 94%);
+  --on-background: hsl(230, 3%, 35%);
+  --on-background-dark: hsl(223, 26%, 13%);
+
+  --primary: hsl(202, 100%, 53%);
+  --secondary: hsl(43, 100%, 66%);
+  --secondary-accent: hsl(32, 100%, 64%);
 }
 
 *,
@@ -21,11 +27,22 @@ html {
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 
   font-family: var(--font-family);
 
   /* TODO: Temporary */
-  background-color: slategray;
+  background-color: var(--background);
+}
+
+#root {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
 }
 
 .constraint-wrapper {
@@ -47,4 +64,11 @@ body {
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Custom Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  height: 0;
+  width: 0;
 }

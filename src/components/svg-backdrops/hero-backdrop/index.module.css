@@ -1,0 +1,13 @@
+.light-color line,
+.dark-color line {
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.light-color line {
+  stroke: var(--secondary);
+}
+
+.dark-color line {
+  stroke: var(--secondary-accent);
+}
