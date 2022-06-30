@@ -42,7 +42,7 @@ const Contact = () => {
   };
 
   return (
-    <div id={styles.contact}>
+    <div id="contact" className={styles.contact}>
       <div
         className={`${styles.alert} ${alert.type !== "" && styles.show} ${
           styles[alert.type]
@@ -57,7 +57,7 @@ const Contact = () => {
         </button>
       </div>
 
-      <h1>
+      <h1 className="section-header">
         <span aria-hidden="true">03.</span>Contact
       </h1>
       <p>
