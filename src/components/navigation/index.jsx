@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import { AnimatedLogo1 } from "../animations/animated-logo";
+import { AnimatedLogoOnLoad } from "../animations/animated-logo";
 import { WordDropAnim } from "../animations/word-rise";
 import "./index.css";
 
@@ -26,7 +26,7 @@ const Navbar = () => {
         onClick={() => window.scrollTo(0, 0)}
         aria-label="Back to Top"
       >
-        <AnimatedLogo1 />
+        <AnimatedLogoOnLoad />
       </button>
 
       <button

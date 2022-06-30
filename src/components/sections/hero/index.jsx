@@ -30,8 +30,8 @@ const Hero = () => {
 
       <div className={styles.backdrop}>
         <HeroSVGBackdrop
-          width="clamp(35rem, 100vw, 80rem)"
-          height="clamp(21.875rem, 62.5vw, 50rem)"
+          width="clamp(40rem, 100vw, 80rem)"
+          height="clamp(20rem, 50vw, 40rem)"
         />
       </div>
     </div>

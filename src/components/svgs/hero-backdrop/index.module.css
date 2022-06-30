@@ -23,6 +23,7 @@
 
 .light-color > g > line:first-child,
 .dark-color > g > line:first-child {
+  transform-origin: center;
   animation-name: grow;
   animation-duration: var(--grow-dur, 10.5s);
   animation-iteration-count: infinite;
@@ -31,11 +32,15 @@
 }
 
 @keyframes slide {
-  from {
-    transform: translateX(0%);
+  0%,
+  100% {
+    transform: scaleX(100%);
   }
-  to {
-    transform: translateX(0.5%);
+  30% {
+    transform: scaleX(101%);
+  }
+  60% {
+    transform: scaleX(99%);
   }
 }
 
@@ -45,9 +50,9 @@
     transform: scaleX(100%);
   }
   30% {
-    transform: scaleX(100.5%);
+    transform: scaleX(103.5%);
   }
   60% {
-    transform: scaleX(99.5%);
+    transform: scaleX(96.5%);
   }
 }

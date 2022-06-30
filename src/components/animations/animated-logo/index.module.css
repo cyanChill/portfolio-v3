@@ -11,63 +11,57 @@
 .svg path,
 .svg line {
   stroke: hsl(var(--primary));
+  stroke-width: 6;
 }
 
 .cube {
   opacity: 0;
 }
 
-.cubeTop {
+/* On Load Version */
+.svg.onLoad .cubeTop {
   animation: slideFromTop 1s forwards;
 }
 
-.cubeBottomLeft {
+.svg.onLoad .cubeBottomLeft {
   animation: slideFromLeft 1s forwards;
   animation-delay: 200ms;
 }
 
-.cubeBottomRight {
+.svg.onLoad .cubeBottomRight {
   animation: slideFromRight 1s forwards;
   animation-delay: 400ms;
 }
 
+
 @keyframes slideFromTop {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(-100%);
   }
-  50% {
-    opacity: 0;
-  }
-  100% {
+  to {
     opacity: 1;
-    transfrom: translateY(0%);
+    transfrom: translateX(0%);
   }
 }
 
 @keyframes slideFromLeft {
-  0% {
+  from {
     opacity: 0;
     transform: translateX(-100%);
   }
-  50% {
-    opacity: 0;
-  }
-  100% {
+  to {
     opacity: 1;
     transfrom: translateX(0%);
   }
 }
 
 @keyframes slideFromRight {
-  0% {
+  from {
     opacity: 0;
     transform: translateX(100%);
   }
-  50% {
-    opacity: 0;
-  }
-  100% {
+  to {
     opacity: 1;
     transfrom: translateX(0%);
   }
