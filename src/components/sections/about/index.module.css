@@ -27,29 +27,20 @@
 }
 
 /* Technologies */
-.technologies {
-  cursor: grab;
-  width: 100%;
-  display: flex;
-  gap: 0.5rem;
-  position: relative;
-  overflow: hidden;
-}
-
 .technology {
   min-width: 7rem;
-  touch-action: none;
   user-select: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+  position: absolute;
 
   padding: 1rem;
   margin: 0.25rem;
 
   /* Temporary */
-  outline: 1px solid hsl(var(--on-background));
+  border: 1px solid hsl(var(--on-background));
 }
 
 .technology img {

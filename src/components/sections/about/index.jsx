@@ -1,40 +1,23 @@
-import { useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Technologies } from "../../../data";
+import DraggableCarousel from "../../sliders/draggable-carousel";
+import DraggableSlider from "../../sliders/draggable-slider";
 import styles from "./index.module.css";
 
 const About = () => {
-  const containerRef = useRef(null);
-  const [isPressed, setIsPressed] = useState(false);
-  const [startX, setStartX] = useState();
-  const [scrollLeft, setScrollLeft] = useState();
+  const carouselRef = useRef(null);
+  const [showAmount, setShowAmount] = useState();
 
-  const onMouseDown = (e) => {
-    setIsPressed(true);
-    setStartX(e.nativeEvent.pageX - containerRef.current.offsetLeft);
-    setScrollLeft(containerRef.current.scrollLeft);
-  };
+  useEffect(() => {
+    const updateAmount = () => {
+      setShowAmount(Math.ceil(parseInt(carouselRef.current.offsetWidth) / 150));
+    };
 
-  const onMouseMove = (e) => {
-    if (!isPressed) return;
-    e.preventDefault();
-    const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = x - startX;
-    containerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const onTouchDown = (e) => {
-    setIsPressed(true);
-    setStartX(e.nativeEvent.touches[0].pageX, -containerRef.current.offsetLeft);
-    setScrollLeft(containerRef.current.scrollLeft);
-  };
-
-  const onTouchMove = (e) => {
-    if (!isPressed) return;
-    const x = e.nativeEvent.touches[0].pageX - containerRef.current.offsetLeft;
-    const walk = x - startX;
-    containerRef.current.scrollLeft = scrollLeft - walk;
-  };
+    updateAmount(); // On initialization
+    window.addEventListener("resize", updateAmount);
+    return () => window.removeEventListener("resize", updateAmount);
+  }, []);
 
   return (
     <div id="about" className={styles.about}>
@@ -69,26 +52,14 @@ const About = () => {
         </p>
       </div>
 
-      <div
-        className={styles.technologies}
-        ref={containerRef}
-        // For Web
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={() => setIsPressed(false)}
-        onMouseLeave={() => setIsPressed(false)}
-        // For Mobile
-        onTouchStart={onTouchDown}
-        onTouchMove={onTouchMove}
-        onTouchEnd={() => setIsPressed(false)}
-      >
+      <DraggableCarousel show={showAmount} ref={carouselRef}>
         {Technologies.map((technology) => (
           <div className={styles.technology} key={technology.name}>
             <img src={technology.icon} alt="" draggable="false" />
             <p>{technology.name}</p>
           </div>
         ))}
-      </div>
+      </DraggableCarousel>
     </div>
   );
 };
