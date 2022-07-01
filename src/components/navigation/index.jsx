@@ -2,6 +2,7 @@ import { useRef } from "react";
 
 import { AnimatedLogoOnLoad } from "../animations/animated-logo";
 import { WordDropAnim } from "../animations/word-rise";
+import VWordWrapAnim from "../animations/vertical-word-wrap";
 import "./index.css";
 
 const Navbar = () => {
@@ -49,19 +50,25 @@ const Navbar = () => {
           <li>
             <a href="#about">
               <span aria-hidden="true">01.</span>
-              <WordDropAnim text="About" delay={300} durationMS={450} />
+              <WordDropAnim delay={300} durationMS={450}>
+                <VWordWrapAnim>About</VWordWrapAnim>
+              </WordDropAnim>
             </a>
           </li>
           <li>
             <a href="#projects">
               <span aria-hidden="true">02.</span>
-              <WordDropAnim text="Projects" delayMS={400} durationMS={450} />
+              <WordDropAnim delayMS={400} durationMS={450}>
+                <VWordWrapAnim>Projects</VWordWrapAnim>
+              </WordDropAnim>
             </a>
           </li>
           <li>
             <a href="#contact">
               <span aria-hidden="true">03.</span>
-              <WordDropAnim text="Contact" delayMS={650} durationMS={450} />
+              <WordDropAnim delayMS={650} durationMS={450}>
+                <VWordWrapAnim>Contact</VWordWrapAnim>
+              </WordDropAnim>
             </a>
           </li>
         </ul>

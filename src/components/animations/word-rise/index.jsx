@@ -12,22 +12,22 @@ import { BaseAnimationContainer } from "../animation.styles";
 import { WordRise, WordDrop } from "./styles";
 
 /* Word appear from bottom */
-export const WordRiseAnim = ({ text, delayMS = 0, durationMS = 300 }) => {
+export const WordRiseAnim = ({ children, delayMS = 0, durationMS = 300 }) => {
   return (
     <BaseAnimationContainer>
       <WordRise delay={delayMS} duration={durationMS}>
-        {text}
+        {children}
       </WordRise>
     </BaseAnimationContainer>
   );
 };
 
 /* Word appears from top */
-export const WordDropAnim = ({ text, delayMS = 0, durationMS = 300 }) => {
+export const WordDropAnim = ({ children, delayMS = 0, durationMS = 300 }) => {
   return (
     <BaseAnimationContainer>
       <WordDrop delay={delayMS} duration={durationMS}>
-        {text}
+        {children}
       </WordDrop>
     </BaseAnimationContainer>
   );

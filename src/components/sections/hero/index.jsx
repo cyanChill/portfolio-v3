@@ -17,11 +17,9 @@ const Hero = () => {
               style={{ "--padd": `${idx * 0.5}ch` }}
               key={uuidv4()}
             >
-              <WordRiseAnim
-                text={word}
-                delayMS={250 * (idx + 1)}
-                durationMS={450}
-              />
+              <WordRiseAnim delayMS={250 * (idx + 1)} durationMS={450}>
+                {word}
+              </WordRiseAnim>
               <br />
             </div>
           );

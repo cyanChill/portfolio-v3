@@ -10,12 +10,11 @@
 
 import { AnimationContainer, WordWrapStart, WordWrapEnd } from "./styles";
 
-const VWordWrapAnim = ({ text, durationMS = 300, children }) => {
+const VWordWrapAnim = ({ durationMS = 300, children }) => {
   return (
     <AnimationContainer>
-      <WordWrapStart duration={durationMS}>{text}</WordWrapStart>
-      <WordWrapEnd duration={durationMS}>{text}</WordWrapEnd>
-      <div>{children}</div>
+      <WordWrapStart duration={durationMS}>{children}</WordWrapStart>
+      <WordWrapEnd duration={durationMS}>{children}</WordWrapEnd>
     </AnimationContainer>
   );
 };
