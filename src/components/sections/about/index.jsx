@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Technologies } from "../../../data";
 import DraggableCarousel from "../../sliders/draggable-carousel";
+import DragIndicator from "../../svgs/animated/drag-indicator";
 import styles from "./index.module.css";
 
 const About = () => {
@@ -51,14 +52,25 @@ const About = () => {
         </p>
       </div>
 
-      <DraggableCarousel show={showAmount} ref={carouselRef}>
-        {Technologies.map((technology) => (
-          <div className={`flex ${styles.technology}`} key={technology.name}>
-            <img src={technology.icon} alt="" draggable="false" />
-            <p>{technology.name}</p>
-          </div>
-        ))}
-      </DraggableCarousel>
+      <div
+        className="flex"
+        style={{ flexDirection: "column", "--gap": "0.5rem" }}
+      >
+        <DraggableCarousel show={showAmount} ref={carouselRef}>
+          {Technologies.map((technology) => (
+            <div className={`flex ${styles.technology}`} key={technology.name}>
+              <img src={technology.icon} alt="" draggable="false" />
+              <p>{technology.name}</p>
+            </div>
+          ))}
+        </DraggableCarousel>
+        <div className={`flex ${styles.dragContainer}`}>
+          <DragIndicator
+            width="clamp(15rem, 35vw, 20rem)"
+            height="clamp(3rem, 7vw, 4rem)"
+          />
+        </div>
+      </div>
     </div>
   );
 };

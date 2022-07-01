@@ -34,8 +34,6 @@
 
   padding: 1rem;
   margin: 0.25rem;
-
-  /* Temporary */
   border: 1px solid hsl(var(--on-background));
 }
 
@@ -50,6 +48,11 @@
   color: hsl(var(--on-background));
   margin: 0;
   padding: 0;
+}
+
+/* Drag Animation Container */
+.dragContainer {
+  justify-content: center;
 }
 
 @media (min-width: 568px) {

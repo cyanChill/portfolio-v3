@@ -1,0 +1,70 @@
+.svg {
+  transition: all 250ms ease-in-out;
+}
+
+.svg path {
+  fill: hsl(var(--on-background-dark) / 0.8);
+}
+
+.svg circle {
+  fill: hsl(var(--on-background) / 0.75);
+}
+
+.rect {
+  fill: hsl(var(--background));
+}
+
+.hand {
+  opacity: 1;
+  animation: handAnim var(--animationDuration);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.grab {
+  transform-origin: center;
+  opacity: 0;
+  animation: grabAnim var(--animationDuration);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.rect {
+  animation: pathAppear var(--animationDuration);
+  animation-delay: var(--delay);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes handAnim {
+  0% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes grabAnim {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(80%);
+  }
+}
+
+@keyframes pathAppear {
+  20% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(80%);
+  }
+}
