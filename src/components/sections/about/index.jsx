@@ -19,7 +19,7 @@ const About = () => {
   }, []);
 
   return (
-    <div id="about" className={styles.about}>
+    <div id="about" className={`flex ${styles.about}`}>
       <h1 className="section-header">
         <span aria-hidden="true">01.</span>About
       </h1>
@@ -53,7 +53,7 @@ const About = () => {
 
       <DraggableCarousel show={showAmount} ref={carouselRef}>
         {Technologies.map((technology) => (
-          <div className={styles.technology} key={technology.name}>
+          <div className={`flex ${styles.technology}`} key={technology.name}>
             <img src={technology.icon} alt="" draggable="false" />
             <p>{technology.name}</p>
           </div>

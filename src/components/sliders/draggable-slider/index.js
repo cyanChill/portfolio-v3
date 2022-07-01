@@ -37,7 +37,7 @@ const DraggableSlider = ({ children }) => {
 
   return (
     <div
-      className={styles.wrapper}
+      className={`flex ${styles.wrapper}`}
       ref={containerRef}
       // For Web
       onMouseDown={onMouseDown}

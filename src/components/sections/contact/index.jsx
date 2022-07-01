@@ -42,9 +42,9 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className={styles.contact}>
+    <div id="contact" className={`flex ${styles.contact}`}>
       <div
-        className={`${styles.alert} ${alert.type !== "" && styles.show} ${
+        className={`flex ${styles.alert} ${alert.type !== "" && styles.show} ${
           styles[alert.type]
         }`}
       >
@@ -66,10 +66,10 @@ const Contact = () => {
         I'll get back to you as soon as I can.
       </p>
 
-      <div className={styles.action}>
+      <div className={`flex ${styles.action}`}>
         <SocialLinks />
 
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} className={`flex ${styles.form}`}>
           <input
             type="text"
             name="name"
@@ -97,11 +97,14 @@ const Contact = () => {
           <button
             type="submit"
             aria-label="Send Message Button"
-            className={styles.submitBtn}
+            className={`flex ${styles.submitBtn}`}
           >
-            <VWordWrapAnim text={`Send`}>
-              <div className={styles.sendIcon}>
-                <Send />
+            <VWordWrapAnim>
+              <div className={`flex ${styles.submitBtnContent}`}>
+                Send
+                <div className={styles.sendIcon}>
+                  <Send />
+                </div>
               </div>
             </VWordWrapAnim>
           </button>
@@ -119,7 +122,7 @@ const SocialLinks = () => {
   };
 
   return (
-    <ul className={styles.socialLinks}>
+    <ul className={`flex ${styles.socialLinks}`}>
       <li>
         <a
           href="https://github.com/cyanChill"
