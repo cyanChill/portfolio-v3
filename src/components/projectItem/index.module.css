@@ -1,0 +1,138 @@
+.wrapper {
+  max-width: calc(var(--reasonable-max-app-width) - 5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectPreview {
+  max-width: 45rem;
+  width: 100%;
+  height: fit-content;
+  aspect-ratio: 1;
+  filter: brightness(0.8);
+
+  overflow: hidden;
+}
+
+.projectPreview video {
+  z-index: 1;
+  width: 100%;
+}
+
+.projectTitle {
+  z-index: 2;
+  width: max-content;
+  height: max-content;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: 500;
+  background-color: hsl(var(--secondary));
+}
+
+.wrapper.left .projectTitle {
+  align-self: flex-start;
+}
+
+.projectDescription {
+  --gap: 0;
+  z-index: 2;
+  flex-direction: column;
+}
+
+.descriptionContainer {
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: hsl(var(--off-white) / 0.95);
+}
+
+.description {
+  margin: 0;
+  padding: 0;
+}
+
+.techUsed {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: hsl(var(--on-background));
+}
+
+.links {
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.externalLink {
+  --gap: 0.25rem;
+  align-items: center;
+
+  color: hsl(var(--on-background));
+  text-decoration: none;
+}
+
+.iconSize {
+  height: 2rem;
+  width: 2rem;
+}
+
+@media (min-width: 568px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+  }
+
+  .projectPreview {
+    grid-row: 4 / span 4;
+    grid-column: 2 / span 10;
+  }
+
+  .projectDescription {
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-template-columns: repeat(5, 1fr);
+
+    grid-row: 1 / 4;
+    grid-column: 1 / span 12;
+  }
+
+  .projectTitle {
+    width: initial;
+    align-self: flex-end;
+    grid-row: 1 / 2;
+    grid-column: 2 / span 3;
+  }
+
+  .descriptionContainer {
+    grid-row: 2/3;
+    grid-column: span 5;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  .projectPreview {
+    grid-row: 1 / span 8;
+    grid-column: 1 / span 8;
+  }
+
+  .projectDescription {
+    grid-row: 2 / 8;
+    grid-column: 5 / 13;
+  }
+
+  /* If we have the left option*/
+  .wrapper.left .projectPreview {
+    grid-column: 5 / span 13;
+  }
+
+  .wrapper.left .projectDescription {
+    grid-column: 1 / 8;
+  }
+}

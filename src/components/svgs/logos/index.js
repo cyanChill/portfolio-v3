@@ -31,10 +31,10 @@ export const Email = () => {
   );
 };
 
-export const Send = () => {
+export const ArrowTopRight = () => {
   return (
     <svg className={styles.svg} viewBox="0 0 24 24">
-      <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+      <path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
     </svg>
   );
 };
