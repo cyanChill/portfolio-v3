@@ -1,0 +1,14 @@
+.container {
+  cursor: grab;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+}
+
+.content > * {
+  width: calc(100% / var(--show, 1));
+}
