@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-import HeroSVGBackdrop from "../../svgs/hero-backdrop";
+import HeroSVGBackdrop from "../../svgs/animated/hero-backdrop";
 import { WordRiseAnim } from "../../animations/word-rise";
 import styles from "./index.module.css";
 
