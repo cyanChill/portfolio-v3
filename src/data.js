@@ -56,3 +56,32 @@ export const Technologies = [
     name: "Figma",
   },
 ];
+
+export const Projects = [
+  {
+    onLeft: false,
+    previewVideo: "/media/next-instagram.mp4",
+    name: "Next-Instagram",
+    description:
+      "This is an Instagram clone built mainly using NextJS. It contains features such as media sharing and chat messaging.\nThis app uses Firebase to store the images and MongoDB for all other data.",
+    techDescription:
+      "Built using NextJS, MongoDB, Firebase, and hosted on Heroku.",
+    links: {
+      repository: "https://github.com/cyanChill/NextJS-Instagram",
+      liveSite: "https://cyanchill-instagram.herokuapp.com/",
+    },
+  },
+  {
+    onLeft: true,
+    previewVideo: "/media/next-instagram.mp4",
+    name: "Next-Instagram-Left",
+    description:
+      "This is an Instagram clone built mainly using NextJS. It contains features such as media sharing and chat messaging.\nThis app uses Firebase to store the images and MongoDB for all other data.",
+    techDescription:
+      "Built using NextJS, MongoDB, Firebase, and hosted on Heroku.",
+    links: {
+      repository: "https://github.com/cyanChill/NextJS-Instagram",
+      liveSite: "https://cyanchill-instagram.herokuapp.com/",
+    },
+  },
+];

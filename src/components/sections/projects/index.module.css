@@ -1,0 +1,17 @@
+.projects {
+  --project-bkg: var(--off-black);
+  background-color: hsl(var(--project-bkg));
+
+  flex-direction: column;
+  padding: 4.5rem 2.5rem 7.5rem 2.5rem;
+  transition: box-shadow 250ms ease-in-out;
+
+  /* To give full width */
+  box-shadow: 0 0 0 100vmax hsl(var(--project-bkg));
+  clip-path: inset(0 -100vmax); /* top/bottom left/right */
+}
+
+.projects h1 {
+  filter: brightness(0.9);
+  color: hsl(var(--off-white));
+}
