@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-import { GitHub, LinkedIn, Email, Send, Close } from "../../svgs/logos";
+import {
+  GitHub,
+  LinkedIn,
+  Email,
+  ArrowTopRight,
+  Close,
+} from "../../svgs/logos";
 import VWordWrapAnim from "../../animations/vertical-word-wrap";
 import styles from "./index.module.css";
 
@@ -99,14 +105,10 @@ const Contact = () => {
             aria-label="Send Message Button"
             className={`flex ${styles.submitBtn}`}
           >
-            <VWordWrapAnim>
-              <div className={`flex ${styles.submitBtnContent}`}>
-                Send
-                <div className={styles.sendIcon}>
-                  <Send />
-                </div>
-              </div>
-            </VWordWrapAnim>
+            <VWordWrapAnim>Send</VWordWrapAnim>
+            <div className={styles.sendIcon}>
+              <ArrowTopRight />
+            </div>
           </button>
         </form>
       </div>
