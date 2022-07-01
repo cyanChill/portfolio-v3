@@ -13,6 +13,10 @@
   --secondary: 43 100% 66%;
   --secondary-accent: 32 100% 64%;
 
+  --main-1: hsl(199, 64%, 73%);
+  --main-2: hsl(192, 70%, 43%);
+  --main-3: hsl(200, 95%, 14%);
+
   --off-white: 223 41% 94%;
 
   --success: 115 100% 76%;

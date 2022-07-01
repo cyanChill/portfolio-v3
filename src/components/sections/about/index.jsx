@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 import { Technologies } from "../../../data";
 import DraggableCarousel from "../../sliders/draggable-carousel";
-import DraggableSlider from "../../sliders/draggable-slider";
 import styles from "./index.module.css";
 
 const About = () => {
