@@ -66,6 +66,7 @@ const About = () => {
         </DraggableCarousel>
         <div className={`flex ${styles.dragContainer}`}>
           <DragIndicator
+            duration={7.5}
             width="clamp(15rem, 35vw, 20rem)"
             height="clamp(3rem, 7vw, 4rem)"
           />

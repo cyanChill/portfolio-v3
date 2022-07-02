@@ -1,4 +1,10 @@
 .contact {
+  --project-bkg: var(--secondary) / 0.65;
+  background-color: hsl(var(--project-bkg));
+  /* To give full width */
+  box-shadow: 0 0 0 100vmax hsl(var(--project-bkg));
+  clip-path: inset(0 -100vmax); /* top/bottom left/right */
+
   flex-direction: column;
   padding: 4.5rem 1.5rem 7.5rem 1.5rem;
 }
