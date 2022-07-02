@@ -9,7 +9,6 @@
   max-width: 45rem;
   width: 100%;
   height: fit-content;
-  aspect-ratio: 1;
   filter: brightness(0.8);
 
   overflow: hidden;
@@ -46,7 +45,7 @@
 .descriptionContainer {
   padding: 1rem;
   font-size: 1.2rem;
-  background-color: hsl(var(--off-white) / 0.95);
+  background-color: hsl(var(--off-white));
 }
 
 .description {

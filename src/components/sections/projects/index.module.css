@@ -1,5 +1,6 @@
 .projects {
-  --project-bkg: var(--off-black);
+  --gap: 2rem;
+  --project-bkg: var(--cyan-dark) / 0.9;
   background-color: hsl(var(--project-bkg));
 
   flex-direction: column;
@@ -12,6 +13,11 @@
 }
 
 .projects h1 {
-  filter: brightness(0.9);
   color: hsl(var(--off-white));
+}
+
+@media (min-width: 568px) {
+  .projects {
+    --gap: 3rem;
+  }
 }
