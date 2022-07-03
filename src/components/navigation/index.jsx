@@ -20,6 +20,11 @@ const Navbar = () => {
     }
   };
 
+  const closeNav = () => {
+    navMenu.current.setAttribute("data-visible", false);
+    navToggleRef.current.setAttribute("aria-expanded", false);
+  };
+
   return (
     <header className={`flex ${styles["primary-header"]}`}>
       <button
@@ -48,7 +53,7 @@ const Navbar = () => {
           ref={navMenu}
         >
           <li>
-            <a href="#about">
+            <a href="#about" onClick={closeNav}>
               <span aria-hidden="true">01.</span>
               <WordDropAnim delay={300} durationMS={450}>
                 <VWordWrapAnim>About</VWordWrapAnim>
@@ -56,7 +61,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#projects">
+            <a href="#projects" onClick={closeNav}>
               <span aria-hidden="true">02.</span>
               <WordDropAnim delayMS={400} durationMS={450}>
                 <VWordWrapAnim>Projects</VWordWrapAnim>
@@ -64,7 +69,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#contact">
+            <a href="#contact" onClick={closeNav}>
               <span aria-hidden="true">03.</span>
               <WordDropAnim delayMS={650} durationMS={450}>
                 <VWordWrapAnim>Contact</VWordWrapAnim>
