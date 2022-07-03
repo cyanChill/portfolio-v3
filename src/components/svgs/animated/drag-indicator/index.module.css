@@ -1,5 +1,5 @@
-.svg {
-  transition: all 250ms ease-in-out;
+.svg * {
+  transition: all var(--transition-speed) ease-in-out;
 }
 
 .svg path {

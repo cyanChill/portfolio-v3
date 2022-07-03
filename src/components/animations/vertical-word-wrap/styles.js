@@ -22,11 +22,11 @@ export const AnimationContainer = styled(BaseAnimationContainer)`
   align-items: center;
   gap: 1rem;
 
-  &:hover ${WordWrapStart} {
+  &:hover > ${WordWrapStart} {
     transform: translateY(-100%) skewY(50deg);
   }
 
-  &:hover ${WordWrapEnd} {
+  &:hover > ${WordWrapEnd} {
     transform: translateY(0%) skewY(0deg);
   }
 `;

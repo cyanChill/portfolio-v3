@@ -16,7 +16,7 @@ const DragIndicator = ({ width = 100, height = 20, duration = 10 }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g className={styles.linePath}>{svgCirclesPath}</g>
-      <rect className={styles.rect} x="5" y="8" width="84" height="3" />
+      <rect className={styles.rect} x="5" y="5" width="84" height="9" />
 
       <path
         className={styles.hand}

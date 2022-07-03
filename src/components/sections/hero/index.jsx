@@ -8,7 +8,7 @@ const Hero_Words = ["Anthony", "Liang", "FullStack", "Developer"];
 
 const Hero = () => {
   return (
-    <div id={styles.hero}>
+    <div id="hero" className={styles.hero}>
       <div className={styles.content}>
         {Hero_Words.map((word, idx) => {
           return (

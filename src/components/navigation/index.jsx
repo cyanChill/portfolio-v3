@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { AnimatedLogoOnLoad } from "../animations/animated-logo";
 import { WordDropAnim } from "../animations/word-rise";
 import VWordWrapAnim from "../animations/vertical-word-wrap";
-import "./index.css";
+import styles from "./index.module.css";
 
 const Navbar = () => {
   const navToggleRef = useRef(null);
@@ -21,9 +21,9 @@ const Navbar = () => {
   };
 
   return (
-    <header className="primary-header flex">
+    <header className={`flex ${styles["primary-header"]}`}>
       <button
-        className="logo-btn"
+        className={styles["logo-btn"]}
         onClick={() => window.scrollTo(0, 0)}
         aria-label="Back to Top"
       >
@@ -31,7 +31,7 @@ const Navbar = () => {
       </button>
 
       <button
-        className="mobile-nav-toggle"
+        className={styles["mobile-nav-toggle"]}
         aria-controls="primary-navigation"
         aria-expanded="false"
         onClick={toggleNav}
@@ -43,7 +43,7 @@ const Navbar = () => {
       <nav>
         <ul
           id="primary-navigation"
-          className="primary-navigation flex"
+          className={`flex ${styles["primary-navigation"]}`}
           data-visible="false"
           ref={navMenu}
         >

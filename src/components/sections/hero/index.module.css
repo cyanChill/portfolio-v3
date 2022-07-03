@@ -1,4 +1,4 @@
-#hero {
+.hero {
   width: 100%;
   position: relative;
 
@@ -9,7 +9,7 @@
 }
 
 /* Bottom Border */
-#hero:after {
+.hero:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -39,7 +39,7 @@
 }
 
 @media (min-width: 568px) {
-  #hero {
+  .hero {
     padding-inline: 3rem;
     font-size: clamp(4rem, 12.5vw, 10rem);
   }
