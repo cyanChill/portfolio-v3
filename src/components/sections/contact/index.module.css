@@ -1,12 +1,15 @@
 .contact {
-  --project-bkg: var(--secondary) / 0.65;
-  background-color: hsl(var(--project-bkg));
+  background-color: hsl(var(--contact-bkg));
   /* To give full width */
-  box-shadow: 0 0 0 100vmax hsl(var(--project-bkg));
+  box-shadow: 0 0 0 100vmax hsl(var(--contact-bkg));
   clip-path: inset(0 -100vmax); /* top/bottom left/right */
 
   flex-direction: column;
   padding: 4.5rem 1.5rem 7.5rem 1.5rem;
+}
+
+.contact h1 {
+  color: black !important;
 }
 
 .contact p {
@@ -37,6 +40,10 @@
   height: 2.5rem;
 }
 
+.socialLinks svg {
+  fill: hsl(var(--off-grey)) !important;
+}
+
 /* Form styling */
 .form {
   --gap: 0.5rem;
@@ -50,7 +57,7 @@
   font-size: 1.15rem;
   resize: none;
   background-color: transparent;
-  border: 1px solid hsl(var(--on-background) / 0.5);
+  border: 1px solid hsl(var(--off-grey) / 0.5);
   outline: 0;
   transition: all 250ms ease-in-out;
 }
@@ -69,9 +76,9 @@
 .form input:focus,
 .form textarea:hover,
 .form textarea:focus {
-  border-color: hsl(var(--on-background-dark));
+  border-color: hsl(var(--off-grey));
   padding-inline: 1rem;
-  background-color: hsl(var(--on-background) / 0.05);
+  background-color: hsl(var(--off-grey) / 0.05);
 }
 
 /* Submit Button Styling */
@@ -92,6 +99,10 @@
   height: 2rem;
 }
 
+.sendIcon svg {
+  fill: hsl(var(--off-grey)) !important;
+}
+
 /* Alerts Container Styling */
 .alert {
   --gap: 0rem;
@@ -107,7 +118,7 @@
 
   opacity: 0;
   padding: 0.5rem 1rem;
-  outline: 1px solid hsl(var(--on-background) / 0.5);
+  outline: 1px solid hsl(var(--off-grey) / 0.5);
   background-color: hsl(var(--off-white) / 1);
 }
 

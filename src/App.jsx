@@ -1,22 +1,18 @@
 import Navbar from "./components/navigation";
 import Hero from "./components/sections/hero";
-import About from "./components/sections/about";
-import Projects from "./components/sections/projects";
-import Contact from "./components/sections/contact";
+import RefSections from "./components/sections/refSections";
 import styles from "./app.module.css";
 
-function App() {
+const App = () => {
   return (
     <>
       <Navbar />
       <div className={styles.wrapper}>
         <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        <RefSections />
       </div>
     </>
   );
-}
+};
 
 export default App;

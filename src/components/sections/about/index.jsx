@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, forwardRef } from "react";
 
 import { Technologies } from "../../../data";
 import DraggableCarousel from "../../sliders/draggable-carousel";
 import DragIndicator from "../../svgs/animated/drag-indicator";
 import styles from "./index.module.css";
 
-const About = () => {
+const About = forwardRef((_, ref) => {
   const carouselRef = useRef(null);
   const [showAmount, setShowAmount] = useState();
 
@@ -20,12 +20,12 @@ const About = () => {
   }, []);
 
   return (
-    <div id="about" className={`flex ${styles.about}`}>
+    <div id="about" className={`flex ${styles.about}`} ref={ref}>
       <h1 className="section-header">
         <span aria-hidden="true">01.</span>About
       </h1>
 
-      <div className={styles.content}>
+      <div className={`flex ${styles.content}`}>
         <p className={styles.past}>
           Being introduced to the world of web development in my first year as a
           highschooler with a newly introduced computer science course lit the
@@ -52,10 +52,7 @@ const About = () => {
         </p>
       </div>
 
-      <div
-        className="flex"
-        style={{ flexDirection: "column", "--gap": "0.5rem" }}
-      >
+      <div className={`flex ${styles.carouselContainer}`}>
         <DraggableCarousel show={showAmount} ref={carouselRef}>
           {Technologies.map((technology) => (
             <div className={`flex ${styles.technology}`} key={technology.name}>
@@ -64,6 +61,7 @@ const About = () => {
             </div>
           ))}
         </DraggableCarousel>
+
         <div className={`flex ${styles.dragContainer}`}>
           <DragIndicator
             duration={7.5}
@@ -74,6 +72,6 @@ const About = () => {
       </div>
     </div>
   );
-};
+});
 
 export default About;

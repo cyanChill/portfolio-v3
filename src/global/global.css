@@ -10,18 +10,24 @@
   --on-background-dark: 223 26% 13%;
 
   --primary: 202 100% 53%;
-  --secondary: 43 100% 66%;
+  --secondary: 43 100% 72%;
   --secondary-accent: 32 100% 64%;
 
   --blue-lightest: 199 64% 73%;
   --cyan-light: 192 70% 43%;
-  --cyan-dark: 200 95% 14%;
+  --cyan-dark: 200 95% 15%;
 
   --off-white: 223 41% 94%;
+  --off-grey: 230 3% 35%;
   --off-black: 0 0% 20%;
 
   --success: 115 100% 76%;
   --error: 0 100% 67%;
+
+  --transition-speed: 500ms;
+
+  --project-bkg: var(--cyan-dark);
+  --contact-bkg: var(--secondary);
 }
 
 *,
@@ -41,6 +47,7 @@ body {
 
   font-family: var(--font-family);
   background-color: hsl(var(--background));
+  transition: all var(--transition-speed) ease-in-out;
 }
 
 #root {
@@ -51,10 +58,6 @@ body {
 
   margin: 0;
   padding: 0;
-}
-
-.constraint-wrapper {
-  max-width: var(--reasonable-max-app-width);
 }
 
 .flex {
@@ -92,8 +95,34 @@ body {
   padding-right: 1ch;
 }
 
+/* Body-Affecting Classes */
+body.project-focus,
+body.contact-focus {
+  --on-background: black;
+  --on-background-dark: var(--off-white);
+}
+
+body.project-focus {
+  --background: var(--project-bkg);
+}
+
+body.project-focus .section-header {
+  color: hsl(var(--off-white));
+}
+
+body.contact-focus {
+  --background: var(--contact-bkg);
+}
+
+@media (min-width: 568px) {
+  body.project-focus,
+  body.contact-focus {
+    --on-background: var(--off-white);
+    --on-background-dark: var(--off-white);
+  }
+}
+
 /* Custom Scrollbar */
-/* width */
 ::-webkit-scrollbar {
   height: 0;
   width: 0;

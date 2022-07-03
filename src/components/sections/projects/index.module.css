@@ -1,19 +1,18 @@
 .projects {
   --gap: 2rem;
-  --project-bkg: var(--cyan-dark) / 0.9;
-  background-color: hsl(var(--project-bkg));
-
   flex-direction: column;
   padding: 4.5rem 2.5rem 7.5rem 2.5rem;
-  transition: box-shadow 250ms ease-in-out;
 
-  /* To give full width */
-  box-shadow: 0 0 0 100vmax hsl(var(--project-bkg));
-  clip-path: inset(0 -100vmax); /* top/bottom left/right */
+  transform-origin: top center;
+  transition-property: background-color, transform;
+  transition-duration: var(--transition-speed),
+    calc(var(--transition-speed) / 2);
+  transition-timing-function: ease-in-out;
 }
 
-.projects h1 {
-  color: hsl(var(--off-white));
+.projects.seen {
+  background-color: hsl(var(--project-bkg));
+  transform: scale(0.9975);
 }
 
 @media (min-width: 568px) {
