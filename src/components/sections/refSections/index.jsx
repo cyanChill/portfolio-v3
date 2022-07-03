@@ -10,7 +10,7 @@ const options = { root: null, rootMargin: "0px", threshold: 0 };
 const RefSections = () => {
   const [aboutRef, aboutVisible] = useElementOnScreen({
     ...options,
-    threshold: 0.3,
+    threshold: 0.4,
   });
   const [projectsRef, projectsVisible] = useElementOnScreen(options);
   const [contactRef, contactVisible] = useElementOnScreen({

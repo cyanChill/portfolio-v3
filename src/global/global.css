@@ -26,6 +26,7 @@
 
   --transition-speed: 500ms;
 
+  --text-color: var(--off-black);
   --project-bkg: var(--cyan-dark);
   --contact-bkg: var(--secondary);
 }
@@ -98,7 +99,7 @@ body {
 /* Body-Affecting Classes */
 body.project-focus,
 body.contact-focus {
-  --on-background: black;
+  --on-background: var(--off-white);
   --on-background-dark: var(--off-white);
 }
 
@@ -115,11 +116,6 @@ body.contact-focus {
 }
 
 @media (min-width: 568px) {
-  body.project-focus,
-  body.contact-focus {
-    --on-background: var(--off-white);
-    --on-background-dark: var(--off-white);
-  }
 }
 
 /* Custom Scrollbar */

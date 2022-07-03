@@ -75,7 +75,7 @@
 .primary-navigation a {
   font-size: 2rem;
   text-decoration: none;
-  color: hsl(var(--on-background));
+  color: hsl(var(--text-color));
 }
 
 /* Span holding the #s */
@@ -120,6 +120,7 @@
   }
 
   .primary-navigation a {
+    color: hsl(var(--on-background));
     font-size: 1.25rem;
   }
 
