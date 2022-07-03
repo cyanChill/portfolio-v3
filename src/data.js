@@ -48,12 +48,12 @@ export const Technologies = [
     name: "MongoDB",
   },
   {
-    icon: "/images/technologies/git.svg",
-    name: "GIT",
+    icon: "/images/technologies/heroku.svg",
+    name: "Heroku",
   },
   {
-    icon: "/images/technologies/figma.svg",
-    name: "Figma",
+    icon: "/images/technologies/netlify.svg",
+    name: "Netlify",
   },
 ];
 
@@ -123,7 +123,7 @@ export const Projects = [
   {
     onLeft: true,
     previewVideo: "/media/waldo.mp4",
-    name: "Where's Waldo Game",
+    name: "Where's Waldo",
     description:
       "This is an implementation of Where's Waldo using an image by STE PHA NIE. This is a simple and fun game where the top scores are displayed on the level selection page.",
     techDescription: "Built using React, React-Router, and Firebase.",
