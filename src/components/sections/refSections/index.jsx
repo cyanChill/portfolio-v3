@@ -3,19 +3,18 @@ import { useEffect } from "react";
 import useElementOnScreen from "../../../hooks/useElementOnScreen";
 import About from "../about";
 import Projects from "../projects";
-import Contact from "../contact";
 
 const options = { root: null, rootMargin: "0px", threshold: 0 };
 
 const RefSections = () => {
   const [aboutRef, aboutVisible] = useElementOnScreen({
     ...options,
-    threshold: 0.4,
+    threshold: 1,
   });
   const [projectsRef, projectsVisible] = useElementOnScreen(options);
   const [contactRef, contactVisible] = useElementOnScreen({
     ...options,
-    threshold: 0.5,
+    threshold: 1,
   });
 
   useEffect(() => {
@@ -36,9 +35,10 @@ const RefSections = () => {
 
   return (
     <>
-      <About ref={aboutRef} />
-      <Projects seen={contactVisible} ref={projectsRef} />
-      <Contact ref={contactRef} />
+      <div ref={aboutRef} />
+      <About />
+      <Projects seen={projectsVisible && !aboutVisible} ref={projectsRef} />
+      <div ref={contactRef} />
     </>
   );
 };

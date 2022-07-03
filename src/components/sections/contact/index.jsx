@@ -1,4 +1,4 @@
-import { useState, forwardRef } from "react";
+import { useState } from "react";
 
 import {
   GitHub,
@@ -19,7 +19,7 @@ const encode = (data) => {
 const DEFAULT_FORM_STATE = { name: "", email: "", message: "" };
 const DEFAULT_ALERT_STATE = { type: "", message: "" };
 
-const Contact = forwardRef((_, ref) => {
+const Contact = () => {
   const [formData, setFormData] = useState(DEFAULT_FORM_STATE);
   const [alert, setAlert] = useState(DEFAULT_ALERT_STATE);
 
@@ -48,7 +48,7 @@ const Contact = forwardRef((_, ref) => {
   };
 
   return (
-    <div id="contact" className={`flex ${styles.contact}`} ref={ref}>
+    <div id="contact" className={`flex ${styles.contact}`}>
       <div
         className={`flex ${styles.alert} ${alert.type !== "" && styles.show} ${
           styles[alert.type]
@@ -114,7 +114,7 @@ const Contact = forwardRef((_, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default Contact;
 

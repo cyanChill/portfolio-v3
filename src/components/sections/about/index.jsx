@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState, forwardRef } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 
 import { Technologies } from "../../../data";
 import DraggableCarousel from "../../sliders/draggable-carousel";
 import DragIndicator from "../../svgs/animated/drag-indicator";
 import styles from "./index.module.css";
 
-const About = forwardRef((_, ref) => {
+const About = memo(() => {
   const carouselRef = useRef(null);
   const [showAmount, setShowAmount] = useState();
 
@@ -20,7 +20,7 @@ const About = forwardRef((_, ref) => {
   }, []);
 
   return (
-    <div id="about" className={`flex ${styles.about}`} ref={ref}>
+    <div id="about" className={`flex ${styles.about}`}>
       <h1 className="section-header">
         <span aria-hidden="true">01.</span>About
       </h1>
