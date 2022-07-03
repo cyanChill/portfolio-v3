@@ -2,9 +2,9 @@
   width: 100%;
   position: relative;
 
-  padding: 4.5rem 2rem 3rem 2rem;
-  font-size: clamp(3rem, 15vw, 7rem);
-  font-weight: 600;
+  padding: 4.5rem 1rem 3rem 1rem;
+  font-size: clamp(2.65rem, 10vw, 7rem);
+  font-weight: 400;
   color: hsl(var(--on-background-dark));
 }
 

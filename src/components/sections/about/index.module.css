@@ -1,6 +1,6 @@
 .about {
   flex-direction: column;
-  padding: 4.5rem 1.5rem;
+  padding: 2rem 1rem;
 }
 
 .about h1 {
@@ -15,8 +15,8 @@
 .content p {
   width: min(55rem, 100%);
   margin: 0;
-  padding: 0.75rem 0;
-  font-size: 1.45rem;
+  padding: 0.25rem 0;
+  font-size: 1.05rem;
 }
 
 .past {
@@ -32,7 +32,7 @@
 .carouselContainer {
   --gap: 0.5rem;
   flex-direction: column;
-  padding-block: 3rem;
+  padding-block-start: 1.5rem;
 }
 
 /* Technologies */
@@ -70,6 +70,16 @@
 @media (min-width: 568px) {
   .about {
     --gap: 2.5rem;
+    padding: 4.5rem 1.5rem;
+  }
+
+  .content p {
+    padding: 0.75rem 0;
+    font-size: 1.45rem;
+  }
+
+  .carouselContainer {
+    padding-block: 3rem;
   }
 
   .technology img {

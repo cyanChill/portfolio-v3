@@ -5,16 +5,20 @@
   clip-path: inset(0 -100vmax); /* top/bottom left/right */
 
   flex-direction: column;
-  padding: 4.5rem 1.5rem 7.5rem 1.5rem;
+  padding: 2rem 1rem;
 }
 
 .contact h1 {
   color: black !important;
 }
 
+.contact h1 > span {
+  font-weight: 400;
+}
+
 .contact p {
   width: min(45rem, 100%);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   padding: 0;
   margin: 0;
 }
@@ -36,8 +40,8 @@
 }
 
 .socialLinks li {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .socialLinks svg {
@@ -54,7 +58,7 @@
 .form input,
 .form textarea {
   padding: 0.5rem 0.75rem;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   resize: none;
   background-color: transparent;
   border: 1px solid hsl(var(--off-grey) / 0.5);
@@ -88,15 +92,15 @@
   align-items: center;
 
   padding: 0.35rem 0.65rem;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   border: 0;
   outline: 0;
   background-color: transparent;
 }
 
 .sendIcon {
-  width: 2rem;
-  height: 2rem;
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
 .sendIcon svg {
@@ -147,6 +151,14 @@
 }
 
 @media (min-width: 568px) {
+  .contact {
+    padding: 4.5rem 1.5rem 7.5rem 1.5rem;
+  }
+
+  .contact p {
+    font-size: 1.25rem;
+  }
+
   .action {
     flex-direction: row;
   }
@@ -155,5 +167,24 @@
     --gap: 0.75rem;
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  .socialLinks li {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .form input,
+  .form textarea {
+    font-size: 1.15rem;
+  }
+
+  .submitBtn {
+    font-size: 1.25rem;
+  }
+
+  .sendIcon {
+    width: 2rem;
+    height: 2rem;
   }
 }

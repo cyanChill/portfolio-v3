@@ -46,7 +46,7 @@
 
   list-style: none;
   margin: 0;
-  padding: min(30vh, 10rem) 2em;
+  padding: min(30vh, 10rem) 1.25em;
 
   position: fixed;
   z-index: 1000;
@@ -73,7 +73,7 @@
 }
 
 .primary-navigation a {
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-decoration: none;
   color: hsl(var(--text-color));
 }
@@ -82,7 +82,7 @@
 .primary-navigation a > [aria-hidden="true"] {
   display: inline-block;
   margin-inline-end: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 

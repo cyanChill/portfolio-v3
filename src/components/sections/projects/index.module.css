@@ -1,20 +1,24 @@
 .projects {
   --gap: 2rem;
   flex-direction: column;
-  padding: 4.5rem 2.5rem 7.5rem 2.5rem;
+  padding: 2rem 1rem;
 
   transform-origin: top center;
-  transition: background-color var(--transition-speed) ease-in-out,
-    transform calc(var(--transition-speed) / 2) ease-in-out;
+  transition: transform calc(var(--transition-speed) / 2) ease-in-out;
 }
 
 .projects.seen {
+  transition: background-color calc(var(--transition-speed) * 5) ease-in-out;
   background-color: hsl(var(--project-bkg));
-  transform: scale(0.9975);
 }
 
 @media (min-width: 568px) {
   .projects {
     --gap: 3rem;
+    padding: 4.5rem 2.5rem 7.5rem 2.5rem;
+  }
+
+  .projects.seen {
+    transform: scale(0.9975);
   }
 }
