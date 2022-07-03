@@ -35,8 +35,7 @@ const RefSections = () => {
 
   return (
     <>
-      <div ref={aboutRef} />
-      <About />
+      <About ref={aboutRef} />
       <Projects seen={projectsVisible && !aboutVisible} ref={projectsRef} />
       <div ref={contactRef} />
     </>
