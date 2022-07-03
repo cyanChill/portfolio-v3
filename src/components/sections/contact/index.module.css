@@ -8,11 +8,11 @@
   padding: 2rem 1rem;
 }
 
-.contact h1 {
+.contact h2 {
   color: black !important;
 }
 
-.contact h1 > span {
+.contact h2 > span {
   font-weight: 400;
 }
 

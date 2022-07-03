@@ -8,8 +8,8 @@ const Hero_Words = ["Anthony", "Liang", "FullStack", "Developer"];
 
 const Hero = () => {
   return (
-    <div id="hero" className={styles.hero}>
-      <div className={styles.content}>
+    <section id="hero" className={styles.hero}>
+      <h1 className={styles.content}>
         {Hero_Words.map((word, idx) => {
           return (
             <div
@@ -20,11 +20,10 @@ const Hero = () => {
               <WordRiseAnim delayMS={250 * (idx + 1)} durationMS={450}>
                 {word}
               </WordRiseAnim>
-              <br />
             </div>
           );
         })}
-      </div>
+      </h1>
 
       <div className={styles.backdrop}>
         <HeroSVGBackdrop
@@ -32,7 +31,7 @@ const Hero = () => {
           height="clamp(20rem, 50vw, 40rem)"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,8 +3,6 @@
   position: relative;
 
   padding: 4.5rem 1rem 3rem 1rem;
-  font-size: clamp(2.65rem, 10vw, 7rem);
-  font-weight: 400;
   color: hsl(var(--on-background-dark));
 }
 
@@ -32,6 +30,10 @@
 
 .content {
   max-height: max-content;
+  margin: 0;
+  padding: 0;
+  font-size: clamp(2.65rem, 10vw, 7rem);
+  font-weight: 400;
 }
 
 .word {
@@ -41,6 +43,9 @@
 @media (min-width: 568px) {
   .hero {
     padding-inline: 3rem;
+  }
+
+  .content {
     font-size: clamp(4rem, 12.5vw, 10rem);
   }
 

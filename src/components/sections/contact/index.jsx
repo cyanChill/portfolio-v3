@@ -48,7 +48,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className={`flex ${styles.contact}`}>
+    <section id="contact" className={`flex ${styles.contact}`}>
       <div
         className={`flex ${styles.alert} ${alert.type !== "" && styles.show} ${
           styles[alert.type]
@@ -63,9 +63,9 @@ const Contact = () => {
         </button>
       </div>
 
-      <h1 className="section-header">
+      <h2 className="section-header">
         <span aria-hidden="true">03.</span>Contact
-      </h1>
+      </h2>
       <p>
         I'm currently looking for a role as a full-stack developer. If you have
         any questions, an offer, or want to chat, send an email or message and
@@ -102,7 +102,7 @@ const Contact = () => {
           />
           <button
             type="submit"
-            aria-label="Send Message Button"
+            aria-label="Send Message"
             className={`flex ${styles.submitBtn}`}
           >
             <VWordWrapAnim>Send</VWordWrapAnim>
@@ -112,7 +112,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

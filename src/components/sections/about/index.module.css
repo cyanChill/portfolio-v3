@@ -3,10 +3,6 @@
   padding: 2rem 1rem;
 }
 
-.about h1 {
-  padding-bottom: 0;
-}
-
 .content {
   --gap: 1rem;
   flex-direction: column;
@@ -21,7 +17,7 @@
 
 .past {
   font-style: italic;
-  color: hsl(var(--on-background) / 0.75);
+  color: hsl(var(--on-background-dark) / 0.8);
 }
 
 .current {

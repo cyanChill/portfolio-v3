@@ -6,14 +6,14 @@ import styles from "./index.module.css";
 
 const Projects = forwardRef(({ seen }, ref) => {
   return (
-    <div
+    <section
       id="projects"
       className={`flex ${styles.projects} ${seen && styles.seen} $`}
       ref={ref}
     >
-      <h1 className="section-header">
+      <h2 className="section-header">
         <span aria-hidden="true">02.</span>Projects
-      </h1>
+      </h2>
 
       {ProjectsList.map((project) => (
         <ProjectItem
@@ -22,7 +22,7 @@ const Projects = forwardRef(({ seen }, ref) => {
           left={project.onLeft}
         />
       ))}
-    </div>
+    </section>
   );
 });
 

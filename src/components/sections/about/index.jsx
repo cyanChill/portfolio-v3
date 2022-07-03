@@ -20,10 +20,10 @@ const About = memo(() => {
   }, []);
 
   return (
-    <div id="about" className={`flex ${styles.about}`}>
-      <h1 className="section-header">
+    <section id="about" className={`flex ${styles.about}`}>
+      <h2 className="section-header">
         <span aria-hidden="true">01.</span>About
-      </h1>
+      </h2>
 
       <div className={`flex ${styles.content}`}>
         <p className={styles.past}>
@@ -33,21 +33,16 @@ const About = memo(() => {
         </p>
 
         <p className={styles.current}>
-          Today, I'm facinated by <span className="bold">web development</span>,
-          creating applications, and learning how I can improve my work to
-          benefit the user experience.
+          Today, I'm facinated by <b>web development</b>, creating applications,
+          and learning how I can improve my work to benefit the user experience.
         </p>
+
         <p className={styles.current}>
-          I work with <span className="bold">React</span>,{" "}
-          <span className="bold">NextJS</span>,{" "}
-          <span className="bold">JavaScript (ES6+)</span>,{" "}
-          <span className="bold">CSS</span>, and{" "}
-          <span className="bold">HTML</span> to create a great user experience.
-          I also learned how to use <span className="bold">Firebase</span> and{" "}
-          <span className="bold">MongoDB</span> as backend databases and{" "}
-          <span className="bold">NodeJS</span> and{" "}
-          <span className="bold">Express</span> for the backend experience. I've
-          also used <span className="bold">NextJS</span> to create an all-in-one
+          I work with <b>React</b>, <b>NextJS</b>, <b>JavaScript (ES6+)</b>,{" "}
+          <b>CSS</b>, and <b>HTML</b> to create a great user experience. I also
+          learned how to use <b>Firebase</b> and <b>MongoDB</b> as backend
+          databases and <b>NodeJS</b> and <b>Express</b> for the backend
+          experience. I've also used <b>NextJS</b> to create an all-in-one
           fullstack application.
         </p>
       </div>
@@ -70,7 +65,7 @@ const About = memo(() => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 });
 

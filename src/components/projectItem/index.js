@@ -13,7 +13,7 @@ const ProjectItem = ({ projectInfo, left }) => {
   return (
     <div className={`${left ? styles.left : ""} ${styles.wrapper}`}>
       <div className={`flex ${styles.projectDescription}`}>
-        <h2 className={`flex ${styles.projectTitle}`}>{projectInfo.name}</h2>
+        <h3 className={`flex ${styles.projectTitle}`}>{projectInfo.name}</h3>
 
         <div className={styles.descriptionContainer}>
           <p className={styles.description}>{projectInfo.description}</p>
