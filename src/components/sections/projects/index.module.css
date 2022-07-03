@@ -17,8 +17,4 @@
     --gap: 3rem;
     padding: 4.5rem 2.5rem 7.5rem 2.5rem;
   }
-
-  .projects.seen {
-    transform: scale(0.9975);
-  }
 }
