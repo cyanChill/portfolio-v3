@@ -111,12 +111,9 @@
 .alert {
   --gap: 0rem;
   visibility: hidden;
-  width: 70vw;
+  width: 100%;
+  align-items: center;
   justify-content: space-between;
-  position: fixed;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
   transition: all 300ms ease-in-out;
   z-index: 999;
 
@@ -132,6 +129,8 @@
 }
 
 .closeBtn {
+  flex-shrink: 0;
+  align-self: flex-start;
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
@@ -140,6 +139,10 @@
   border: 0;
   outline: 0;
   background-color: transparent;
+}
+
+.closeBtn svg {
+  fill: black;
 }
 
 .success {

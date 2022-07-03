@@ -45,24 +45,14 @@ const Contact = () => {
     } catch (err) {
       setAlert({ type: "error", message: err });
     }
+
+    setTimeout(() => {
+      setAlert(DEFAULT_ALERT_STATE);
+    }, 5000);
   };
 
   return (
     <section id="contact" className={`flex ${styles.contact}`}>
-      <div
-        className={`flex ${styles.alert} ${alert.type !== "" && styles.show} ${
-          styles[alert.type]
-        }`}
-      >
-        <span>{alert.message}</span>
-        <button
-          className={styles.closeBtn}
-          onClick={() => setAlert(DEFAULT_ALERT_STATE)}
-        >
-          <Close />
-        </button>
-      </div>
-
       <h2 className="section-header">
         <span aria-hidden="true">03.</span>Contact
       </h2>
@@ -111,6 +101,20 @@ const Contact = () => {
             </div>
           </button>
         </form>
+      </div>
+
+      <div
+        className={`flex ${styles.alert} ${alert.type !== "" && styles.show} ${
+          styles[alert.type]
+        }`}
+      >
+        <span>{alert.message}</span>
+        <button
+          className={styles.closeBtn}
+          onClick={() => setAlert(DEFAULT_ALERT_STATE)}
+        >
+          <Close />
+        </button>
       </div>
     </section>
   );
