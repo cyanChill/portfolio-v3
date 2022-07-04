@@ -2,14 +2,6 @@
   --gap: 2rem;
   flex-direction: column;
   padding: 2rem 1rem;
-
-  transform-origin: top center;
-  transition: transform calc(var(--transition-speed) / 2) ease-in-out;
-}
-
-.projects.seen {
-  transition: background-color calc(var(--transition-speed) * 5) ease-in-out;
-  background-color: hsl(var(--project-bkg));
 }
 
 @media (min-width: 568px) {

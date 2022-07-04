@@ -84,6 +84,7 @@ b {
 
 /* Header Style for Each "Section" */
 .section-header {
+  color: black;
   font-size: 2rem;
   font-weight: 500;
   padding: 0;
@@ -92,7 +93,7 @@ b {
 
 .section-header span {
   font-size: 1rem;
-  font-weight: lighter;
+  font-weight: 400;
   padding-right: 1ch;
 }
 
@@ -108,25 +109,14 @@ b {
 }
 
 /* Body-Affecting Classes */
-body.project-focus,
-body.contact-focus {
+body.project-focus {
   --on-background: var(--off-white);
   --on-background-dark: var(--off-white);
-}
-
-body.project-focus {
   --background: var(--project-bkg);
 }
 
 body.project-focus .section-header {
   color: hsl(var(--off-white));
-}
-
-body.contact-focus {
-  --background: var(--contact-bkg);
-}
-
-@media (min-width: 568px) {
 }
 
 /* Custom Scrollbar */

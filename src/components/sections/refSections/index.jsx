@@ -12,32 +12,21 @@ const RefSections = () => {
     threshold: 1,
   });
   const [projectsRef, projectsVisible] = useElementOnScreen(options);
-  const [contactRef, contactVisible] = useElementOnScreen({
-    ...options,
-    threshold: 1,
-  });
 
   useEffect(() => {
     if (aboutVisible) {
       document.body.classList.remove("project-focus");
-      document.body.classList.remove("contact-focus");
-    } else if (projectsVisible && !contactVisible) {
+    } else if (projectsVisible) {
       document.body.classList.add("project-focus");
-      document.body.classList.remove("contact-focus");
-    } else if (contactVisible) {
-      document.body.classList.add("contact-focus");
-      document.body.classList.remove("project-focus");
     } else {
       document.body.classList.remove("project-focus");
-      document.body.classList.remove("contact-focus");
     }
-  }, [projectsVisible, contactVisible, aboutVisible]);
+  }, [projectsVisible, aboutVisible]);
 
   return (
     <>
       <About ref={aboutRef} />
-      <Projects seen={projectsVisible && !aboutVisible} ref={projectsRef} />
-      <div ref={contactRef} />
+      <Projects ref={projectsRef} />
     </>
   );
 };

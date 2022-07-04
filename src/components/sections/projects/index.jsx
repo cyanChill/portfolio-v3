@@ -4,13 +4,9 @@ import { Projects as ProjectsList } from "../../../data";
 import ProjectItem from "../../projectItem";
 import styles from "./index.module.css";
 
-const Projects = forwardRef(({ seen }, ref) => {
+const Projects = forwardRef((_, ref) => {
   return (
-    <section
-      id="projects"
-      className={`flex ${styles.projects} ${seen && styles.seen} $`}
-      ref={ref}
-    >
+    <section id="projects" className={`flex ${styles.projects}`} ref={ref}>
       <h2 className="section-header">
         <span aria-hidden="true">02.</span>Projects
       </h2>

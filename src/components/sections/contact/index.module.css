@@ -12,10 +12,6 @@
   color: black !important;
 }
 
-.contact h2 > span {
-  font-weight: 400;
-}
-
 .contact p {
   width: min(45rem, 100%);
   font-size: 1.05rem;
