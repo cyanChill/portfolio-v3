@@ -45,38 +45,32 @@ const Navbar = () => {
         <span className="sr-only">Menu</span>
       </button>
 
-      <nav>
-        <ul
-          id="primary-navigation"
-          className={`flex ${styles["primary-navigation"]}`}
-          data-visible="false"
-          ref={navMenu}
-        >
-          <li>
-            <a href="#about" onClick={closeNav}>
-              <span aria-hidden="true">01.</span>
-              <WordDropAnim delay={300} durationMS={450}>
-                <VWordWrapAnim>About</VWordWrapAnim>
-              </WordDropAnim>
-            </a>
-          </li>
-          <li>
-            <a href="#projects" onClick={closeNav}>
-              <span aria-hidden="true">02.</span>
-              <WordDropAnim delayMS={400} durationMS={450}>
-                <VWordWrapAnim>Projects</VWordWrapAnim>
-              </WordDropAnim>
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={closeNav}>
-              <span aria-hidden="true">03.</span>
-              <WordDropAnim delayMS={650} durationMS={450}>
-                <VWordWrapAnim>Contact</VWordWrapAnim>
-              </WordDropAnim>
-            </a>
-          </li>
-        </ul>
+      <nav
+        id="primary-navigation"
+        className={`flex ${styles["primary-navigation"]}`}
+        data-visible="false"
+        ref={navMenu}
+      >
+        <a href="#about" onClick={closeNav}>
+          <span aria-hidden="true">01.</span>
+          <WordDropAnim delay={300} durationMS={450}>
+            <VWordWrapAnim>About</VWordWrapAnim>
+          </WordDropAnim>
+        </a>
+
+        <a href="#projects" onClick={closeNav}>
+          <span aria-hidden="true">02.</span>
+          <WordDropAnim delayMS={400} durationMS={450}>
+            <VWordWrapAnim>Projects</VWordWrapAnim>
+          </WordDropAnim>
+        </a>
+
+        <a href="#contact" onClick={closeNav}>
+          <span aria-hidden="true">03.</span>
+          <WordDropAnim delayMS={650} durationMS={450}>
+            <VWordWrapAnim>Contact</VWordWrapAnim>
+          </WordDropAnim>
+        </a>
       </nav>
     </header>
   );
