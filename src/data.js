@@ -122,6 +122,21 @@ export const Projects = [
   },
   {
     onLeft: true,
+    previewVideo: "/media/space-tour.mp4",
+    name: "Space Tourism Site",
+    description:
+      "This is my implementation of Frontend Mentor's Space Tourism multi-page website. I originally did this project in plain HTML, CSS, and JavaScript, then translated the project over to React and improved the overall project structure and styling along the way.",
+    techDescription: "Built using React and React-Router.",
+    links: {
+      repository: "https://github.com/cyanChill/Space-Tourism-Site",
+      liveSite: "https://cyanchill-space-tourism.netlify.app/",
+    },
+  },
+];
+
+const otherProjects = [
+  {
+    onLeft: true,
     previewVideo: "/media/waldo.mp4",
     name: "Where's Waldo",
     description:
