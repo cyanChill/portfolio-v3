@@ -44,8 +44,13 @@ const Contact = () => {
         setFormData(DEFAULT_FORM_STATE);
       })
       .catch((err) => {
-        console.log("error", err);
-        setAlert({ type: "error", message: err });
+        console.log("Fetch Error:");
+        console.log(err);
+        setAlert({
+          type: "error",
+          message:
+            "Generic Error (Can be attempting to sync to background or general form error.)",
+        });
       })
       .finally(() => {
         setTimeout(() => {
