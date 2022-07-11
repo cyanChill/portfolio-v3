@@ -84,10 +84,25 @@ registerRoute(
 const bgSyncPlugin = new BackgroundSyncPlugin("send-contact-info", {
   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours (specified in minutes)
 });
+
+// the fetchDidFail & fetchDidSuccess plugins are part of workbox-core
+const statusPlugin = {
+  fetchDidSucceed: ({ response }) => {
+    console.log("response", response);
+
+    if (response.status >= 500) {
+      // Throwing anything here will trigger fetchDidFail.
+      throw new Error("Server error.");
+    }
+    // If it's not 5xx, use the response as-is.
+    return response;
+  },
+};
+
 registerRoute(
   ({ url }) => url.pathname === "/", // Since we post to netlify on the "/" route
   new NetworkOnly({
-    plugins: [bgSyncPlugin],
+    plugins: [statusPlugin, bgSyncPlugin],
   }),
   "POST"
 );
