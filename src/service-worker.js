@@ -8,10 +8,11 @@
 // service worker, and the Workbox build step will be skipped.
 
 import { clientsClaim } from "workbox-core";
+import { BackgroundSyncPlugin } from "workbox-background-sync";
 import { ExpirationPlugin } from "workbox-expiration";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
-import { StaleWhileRevalidate } from "workbox-strategies";
+import { StaleWhileRevalidate, NetworkOnly } from "workbox-strategies";
 
 clientsClaim();
 
@@ -73,6 +74,22 @@ registerRoute(
       new ExpirationPlugin({ maxAgeSeconds: 60 * 60 * 24 * 30 }), // Refreshes cache once a month
     ],
   })
+);
+
+/* 
+  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+     Using Background Sync for Offline Form Sending Support
+  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*/
+const bgSyncPlugin = new BackgroundSyncPlugin("send-contact-info", {
+  maxRetentionTime: 24 * 60, // Retry for max of 24 Hours (specified in minutes)
+});
+registerRoute(
+  ({ url }) => url.pathname === "/", // Since we post to netlify on the "/" route
+  new NetworkOnly({
+    plugins: [bgSyncPlugin],
+  }),
+  "POST"
 );
 
 // This allows the web app to trigger skipWaiting via

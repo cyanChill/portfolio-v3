@@ -33,18 +33,32 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...formData }),
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData }),
+    })
+      .then((res) => {
+        console.log(res);
+        setAlert({ type: "success", message: "Successfully Submited Form." });
+        setFormData(DEFAULT_FORM_STATE);
+      })
+      .catch((err) => {
+        setAlert({ type: "error", message: err });
       });
 
-      setAlert({ type: "success", message: "Successfully Submited Form." });
-      setFormData(DEFAULT_FORM_STATE);
-    } catch (err) {
-      setAlert({ type: "error", message: err });
-    }
+    // try {
+    //   await fetch("/", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //     body: encode({ "form-name": "contact", ...formData }),
+    //   });
+
+    //   setAlert({ type: "success", message: "Successfully Submited Form." });
+    //   setFormData(DEFAULT_FORM_STATE);
+    // } catch (err) {
+    //   setAlert({ type: "error", message: err });
+    // }
 
     setTimeout(() => {
       setAlert(DEFAULT_ALERT_STATE);
