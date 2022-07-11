@@ -60,8 +60,9 @@ const ProjectItem = ({ projectInfo, left }) => {
         <video
           muted="muted"
           loop
-          src={projectInfo.previewVideo}
+          src={projectInfo.preview.video}
           alt={`screen recording of using this ${projectInfo.name} application.`}
+          poster={projectInfo.preview.thumbnail} // Placeholder image
           ref={videoRef}
         />
       </div>
