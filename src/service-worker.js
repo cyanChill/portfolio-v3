@@ -8,10 +8,11 @@
 // service worker, and the Workbox build step will be skipped.
 
 import { clientsClaim } from "workbox-core";
+import { BackgroundSyncPlugin } from "workbox-background-sync";
 import { ExpirationPlugin } from "workbox-expiration";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
-import { StaleWhileRevalidate } from "workbox-strategies";
+import { StaleWhileRevalidate, NetworkOnly } from "workbox-strategies";
 
 clientsClaim();
 
@@ -46,7 +47,7 @@ registerRoute(
           Handling Local Media (From /public folder)
   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 */
-const LOCAL_MEDIA_TYPES = [".png", ".svg", ".ico"];
+const LOCAL_MEDIA_TYPES = [".png", ".jpg", ".svg", ".ico"];
 registerRoute(
   ({ url }) =>
     url.origin === self.location.origin &&
@@ -73,6 +74,46 @@ registerRoute(
       new ExpirationPlugin({ maxAgeSeconds: 60 * 60 * 24 * 30 }), // Refreshes cache once a month
     ],
   })
+);
+
+/* 
+  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+     Using Background Sync for Offline Form Sending Support
+  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*/
+const postMessage = async (res) => {
+  const clients = await self.clients.matchAll();
+  for (const client of clients) {
+    client.postMessage({ type: res.ok ? "REPLAY_SUCCESS" : "REPLAY_FAIL" });
+  }
+};
+
+const customReplayHandler = async ({ queue }) => {
+  let entry;
+  while ((entry = await queue.shiftRequest())) {
+    try {
+      const res = await fetch(entry.request.clone());
+
+      postMessage(res);
+    } catch (err) {
+      await queue.unshiftRequest(entry);
+      // Throw error tells Background Sync API that retry is needed
+      throw new Error("Replaying failed.");
+    }
+  }
+};
+
+const bgSyncPlugin = new BackgroundSyncPlugin("send-contact-info", {
+  onSync: customReplayHandler,
+  maxRetentionTime: 24 * 60, // Retry for max of 24 Hours (specified in minutes)
+});
+
+registerRoute(
+  ({ url }) => url.pathname === "/", // Since we post to netlify on the "/" route
+  new NetworkOnly({
+    plugins: [bgSyncPlugin],
+  }),
+  "POST"
 );
 
 // This allows the web app to trigger skipWaiting via
