@@ -62,7 +62,7 @@ export const Projects = [
     onLeft: false,
     preview: {
       video: "/media/next-instagram.mp4",
-      thumbnail: "/media/next-instagram.png",
+      thumbnail: "/media/next-instagram.jpg",
     },
     name: "Next-Instagram",
     description:
@@ -78,7 +78,7 @@ export const Projects = [
     onLeft: true,
     preview: {
       video: "/media/gradschoolzero.mp4",
-      thumbnail: "/media/gradschoolzero.png",
+      thumbnail: "/media/gradschoolzero.jpg",
     },
     name: "GradSchoolZero",
     description:
@@ -93,7 +93,7 @@ export const Projects = [
     onLeft: false,
     preview: {
       video: "/media/library.mp4",
-      thumbnail: "/media/library.png",
+      thumbnail: "/media/library.jpg",
     },
     name: "Library App",
     description:
@@ -108,7 +108,7 @@ export const Projects = [
     onLeft: true,
     preview: {
       video: "/media/todo-list.mp4",
-      thumbnail: "/media/todo-list.png",
+      thumbnail: "/media/todo-list.jpg",
     },
     name: "Todo List App",
     description:
@@ -123,7 +123,7 @@ export const Projects = [
     onLeft: false,
     preview: {
       video: "/media/shopping-cart.mp4",
-      thumbnail: "/media/shopping-cart.png",
+      thumbnail: "/media/shopping-cart.jpg",
     },
     name: "Shopping Cart App",
     description:
@@ -139,7 +139,7 @@ export const Projects = [
     onLeft: true,
     preview: {
       video: "/media/space-tour.mp4",
-      thumbnail: "/media/space-tour.png",
+      thumbnail: "/media/space-tour.jpg",
     },
     name: "Space Tourism Site",
     description:
@@ -155,7 +155,10 @@ export const Projects = [
 const otherProjects = [
   {
     onLeft: true,
-    preview: { video: "/media/waldo.mp4", thumbnail: null },
+    preview: {
+      video: "/media/waldo.mp4",
+      thumbnail: "/media/waldo.jpg",
+    },
     name: "Where's Waldo",
     description:
       "This is an implementation of Where's Waldo using an image by STE PHA NIE. This is a simple and fun game where the top scores are displayed on the level selection page.",
