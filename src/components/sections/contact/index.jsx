@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   GitHub,
@@ -22,6 +22,40 @@ const DEFAULT_ALERT_STATE = { type: "", message: "" };
 const Contact = () => {
   const [formData, setFormData] = useState(DEFAULT_FORM_STATE);
   const [alert, setAlert] = useState(DEFAULT_ALERT_STATE);
+  const [currTimeOut, setCurrTimeOut] = useState(null);
+
+  /* Listen for when we "replay" the requests from background-sync  */
+  useEffect(() => {
+    const handleSWMessage = (e) => {
+      clearTimeout(currTimeOut);
+
+      const resType = e.data.type;
+      if (resType === "REPLAY_SUCCESS") {
+        setAlert({
+          type: "success",
+          message: "Sent queued response that was submitted offline.",
+        });
+      } else if (resType === "REPLAY_FAIL") {
+        setAlert({
+          type: "error",
+          message: "Failed to send queued response that was submitted offline.",
+        });
+      }
+
+      const newTimeout = setTimeout(() => setAlert(DEFAULT_ALERT_STATE), 5000);
+      setCurrTimeOut(newTimeout);
+    };
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.addEventListener("message", handleSWMessage);
+    }
+
+    return () => {
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.removeEventListener("message", handleSWMessage);
+      }
+    };
+  }, [currTimeOut]);
 
   const handleFormChange = (e) => {
     setFormData((prev) => ({
@@ -39,41 +73,29 @@ const Contact = () => {
       body: encode({ "form-name": "contact", ...formData }),
     })
       .then((res) => {
-        console.log("response", res);
+        console.log("response from client-side", res);
         setAlert({ type: "success", message: "Successfully Submited Form." });
         setFormData(DEFAULT_FORM_STATE);
       })
       .catch((err) => {
-        console.log("Fetch Error:");
-        console.log(err);
-        setAlert({
-          type: "error",
-          message:
-            "Generic Error (Can be attempting to sync to background or general form error.)",
-        });
+        if (err.message === "Failed to fetch") {
+          setAlert({
+            type: "error",
+            message:
+              "Your response has been queued for submission. Please reconnect to the internet to complete the submission.",
+          });
+          setFormData(DEFAULT_FORM_STATE);
+        } else {
+          setAlert({ type: "error", message: err.message });
+        }
       })
       .finally(() => {
-        setTimeout(() => {
+        clearTimeout(currTimeOut);
+        const newTimeout = setTimeout(() => {
           setAlert(DEFAULT_ALERT_STATE);
         }, 5000);
+        setCurrTimeOut(newTimeout);
       });
-
-    // try {
-    //   await fetch("/", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //     body: encode({ "form-name": "contact", ...formData }),
-    //   });
-
-    //   setAlert({ type: "success", message: "Successfully Submited Form." });
-    //   setFormData(DEFAULT_FORM_STATE);
-    // } catch (err) {
-    //   setAlert({ type: "error", message: err });
-    // }
-
-    // setTimeout(() => {
-    //   setAlert(DEFAULT_ALERT_STATE);
-    // }, 5000);
   };
 
   return (

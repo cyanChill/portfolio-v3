@@ -47,7 +47,7 @@ registerRoute(
           Handling Local Media (From /public folder)
   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 */
-const LOCAL_MEDIA_TYPES = [".png", ".svg", ".ico"];
+const LOCAL_MEDIA_TYPES = [".png", ".jpg", ".svg", ".ico"];
 registerRoute(
   ({ url }) =>
     url.origin === self.location.origin &&
@@ -81,28 +81,37 @@ registerRoute(
      Using Background Sync for Offline Form Sending Support
   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 */
+const postMessage = async (res) => {
+  const clients = await self.clients.matchAll();
+  for (const client of clients) {
+    client.postMessage({ type: res.ok ? "REPLAY_SUCCESS" : "REPLAY_FAIL" });
+  }
+};
+
+const customReplayHandler = async ({ queue }) => {
+  let entry;
+  while ((entry = await queue.shiftRequest())) {
+    try {
+      const res = await fetch(entry.request.clone());
+
+      postMessage(res);
+    } catch (err) {
+      await queue.unshiftRequest(entry);
+      // Throw error tells Background Sync API that retry is needed
+      throw new Error("Replaying failed.");
+    }
+  }
+};
+
 const bgSyncPlugin = new BackgroundSyncPlugin("send-contact-info", {
+  onSync: customReplayHandler,
   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours (specified in minutes)
 });
-
-// the fetchDidFail & fetchDidSuccess plugins are part of workbox-core
-const statusPlugin = {
-  fetchDidSucceed: ({ response }) => {
-    console.log("response", response);
-
-    if (response.status >= 500) {
-      // Throwing anything here will trigger fetchDidFail.
-      throw new Error("Server error.");
-    }
-    // If it's not 5xx, use the response as-is.
-    return response;
-  },
-};
 
 registerRoute(
   ({ url }) => url.pathname === "/", // Since we post to netlify on the "/" route
   new NetworkOnly({
-    plugins: [statusPlugin, bgSyncPlugin],
+    plugins: [bgSyncPlugin],
   }),
   "POST"
 );
