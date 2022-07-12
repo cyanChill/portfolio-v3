@@ -92,31 +92,32 @@ export const Projects = [
   {
     onLeft: false,
     preview: {
-      video: "/media/library.mp4",
-      thumbnail: "/media/library.jpg",
+      video: "/media/bookshelf.mp4",
+      thumbnail: "/media/bookshelf.jpg",
     },
-    name: "Library App",
+    name: "Bookshelf",
     description:
-      "This is a library app where you can add books to your virtual library to keep track of your reading progress. This utilizes localstorage to store information on the books you've read.",
-    techDescription: "Built using Javascript.",
+      "This is a PWA app (offline capabilities) where you can add books to your virtual bookshelf to keep track of your reading progress. This utilizes localstorage to store information on the books you've read.",
+    techDescription: "Built using Javascript + Workbox for PWA support.",
     links: {
-      repository: "https://github.com/cyanChill/Library-App",
-      liveSite: "https://cyanchill.github.io/Library-App/",
+      repository: "https://github.com/cyanChill/Bookshelf",
+      liveSite: "https://cyanchill-bookshelf.netlify.app/",
     },
   },
   {
     onLeft: true,
     preview: {
-      video: "/media/todo-list.mp4",
-      thumbnail: "/media/todo-list.jpg",
+      video: "/media/doelist.mp4",
+      thumbnail: "/media/doelist.jpg",
     },
-    name: "Todo List App",
+    name: "Doelist",
     description:
-      "This is a simple todo list app which you can organize your todos by categories and see them displayed in one of the categories accessed in the sidebar. There's 3 level of priorities you can select and set due dates for each task.",
-    techDescription: "Built using Javascript.",
+      "This is a PWA simple todo list app which you can organize your todos by categories and see them displayed in one of the categories accessed in the sidebar. This app is capable of being run offline.",
+    techDescription:
+      "Built using Javascript, Webpack, and Workbox for PWA support.",
     links: {
-      repository: "https://github.com/cyanChill/JavaScript-Todo-List",
-      liveSite: "https://cyanchill.github.io/JavaScript-Todo-List/",
+      repository: "https://github.com/cyanChill/Doelist",
+      liveSite: "https://doelist.netlify.app/",
     },
   },
   {
