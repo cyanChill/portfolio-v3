@@ -92,16 +92,16 @@ export const Projects = [
   {
     onLeft: false,
     preview: {
-      video: "/media/bookshelf.mp4",
-      thumbnail: "/media/bookshelf.jpg",
+      video: "/media/pcparts.mp4",
+      thumbnail: "/media/pcparts.jpg",
     },
-    name: "Bookshelf",
+    name: "PC Parts List",
     description:
-      "This is a PWA app (offline capabilities) where you can add books to your virtual bookshelf to keep track of your reading progress. This utilizes localstorage to store information on the books you've read.",
-    techDescription: "Built using Javascript + Workbox for PWA support.",
+      "This is an app which can work offline (with page caching) where you can create and share your PC builds. This was made purely on NodeJS instead of the typical front-end style and allows us to utilize serverside-technologies.",
+    techDescription:
+      "Built using NodeJS, Express, Pug, MongoDB, and Workbox for PWA support.",
     links: {
-      repository: "https://github.com/cyanChill/Bookshelf",
-      liveSite: "https://cyanchill-bookshelf.netlify.app/",
+      repository: "https://github.com/cyanChill/pc-parts-list",
     },
   },
   {
@@ -154,6 +154,21 @@ export const Projects = [
 ];
 
 const otherProjects = [
+  {
+    onLeft: true,
+    preview: {
+      video: "/media/gradschoolzero.mp4",
+      thumbnail: "/media/gradschoolzero.jpg",
+    },
+    name: "GradSchoolZero",
+    description:
+      "This is a mock graduation management application using JSON Server as a mock database. With this app, an admin user (Registrar user) can add classes, students, and instructors while also controlling the periods when students can register for classes, when classes are running, and when grades are to be due.",
+    techDescription:
+      "Built using React, React-Router, Bootstrap, and JSON Server.",
+    links: {
+      repository: "https://github.com/CityDevsCCNY/GradSchoolZero",
+    },
+  },
   {
     onLeft: true,
     preview: {
