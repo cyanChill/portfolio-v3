@@ -77,6 +77,22 @@ export const Projects = [
   {
     onLeft: true,
     preview: {
+      video: "/media/odinworks.mp4",
+      thumbnail: "/media/odinworks.jpg",
+    },
+    name: "OdinWorks",
+    description:
+      "This is an app that works similarily to Facebook. You can add/remove friends, create posts with images, and comment on those posts. This implements the JamStack, with the backend hosted on Heroku and the frontend on Netlify.",
+    techDescription:
+      "Built using NodeJS, Express, MongoDB, Firebase, React.",
+    links: {
+      repository: "https://github.com/cyanChill/OdinWorks",
+      liveSite: "https://odin-works.netlify.app/login",
+    },
+  },
+  {
+    onLeft: false,
+    preview: {
       video: "/media/gradschoolzero.mp4",
       thumbnail: "/media/gradschoolzero.jpg",
     },
@@ -90,7 +106,7 @@ export const Projects = [
     },
   },
   {
-    onLeft: false,
+    onLeft: true,
     preview: {
       video: "/media/pcparts.mp4",
       thumbnail: "/media/pcparts.jpg",
@@ -105,7 +121,7 @@ export const Projects = [
     },
   },
   {
-    onLeft: true,
+    onLeft: false,
     preview: {
       video: "/media/doelist.mp4",
       thumbnail: "/media/doelist.jpg",
@@ -121,7 +137,7 @@ export const Projects = [
     },
   },
   {
-    onLeft: false,
+    onLeft: true,
     preview: {
       video: "/media/shopping-cart.mp4",
       thumbnail: "/media/shopping-cart.jpg",
@@ -137,7 +153,7 @@ export const Projects = [
     },
   },
   {
-    onLeft: true,
+    onLeft: false,
     preview: {
       video: "/media/space-tour.mp4",
       thumbnail: "/media/space-tour.jpg",
