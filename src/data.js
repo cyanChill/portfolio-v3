@@ -82,9 +82,8 @@ export const Projects = [
     },
     name: "OdinWorks",
     description:
-      "This is an app that works similarily to Facebook. You can add/remove friends, create posts with images, and comment on those posts. This implements the JamStack, with the backend hosted on Heroku and the frontend on Netlify.",
-    techDescription:
-      "Built using NodeJS, Express, MongoDB, Firebase, React.",
+      "This is an app that works similarly to Facebook. You can add/remove friends, create posts with images, and comment on those posts. This implements the JamStack, with the backend hosted on Heroku and the frontend on Netlify.",
+    techDescription: "Built using NodeJS, Express, MongoDB, Firebase, React.",
     links: {
       repository: "https://github.com/cyanChill/OdinWorks",
       liveSite: "https://odin-works.netlify.app/login",
@@ -113,7 +112,7 @@ export const Projects = [
     },
     name: "PC Parts List",
     description:
-      "This is an app which can work offline (with page caching) where you can create and share your PC builds. This was made purely on NodeJS instead of the typical front-end style and allows us to utilize serverside-technologies.",
+      "This is an app which can work offline (with page caching) where you can create and share your PC builds. This was made purely on NodeJS instead of the typical front-end style and allows us to utilize server-side-technologies.",
     techDescription:
       "Built using NodeJS, Express, Pug, MongoDB, and Workbox for PWA support.",
     links: {

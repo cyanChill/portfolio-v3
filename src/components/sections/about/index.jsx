@@ -36,7 +36,7 @@ const About = memo(
           </p>
 
           <p className={styles.current}>
-            Today, I'm facinated by <b>web development</b>, creating
+            Today, I'm fascinated by <b>web development</b>, creating
             applications, and learning how I can improve my work to benefit the
             user experience.
           </p>
