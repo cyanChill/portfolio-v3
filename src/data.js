@@ -67,11 +67,10 @@ export const Projects = [
     name: "Next-Instagram",
     description:
       "This is an Instagram clone built mainly using NextJS. It contains features such as media sharing and chat messaging. This app uses Firebase to store the images and MongoDB for all other data.",
-    techDescription:
-      "Built using NextJS, MongoDB, Firebase, and hosted on Heroku.",
+    techDescription: "Built using NextJS, MongoDB, and Firebase.",
     links: {
       repository: "https://github.com/cyanChill/NextJS-Instagram",
-      liveSite: "https://cyanchill-instagram.herokuapp.com/",
+      liveSite: "https://cyangram.vercel.app/",
     },
   },
   {
@@ -82,8 +81,9 @@ export const Projects = [
     },
     name: "OdinWorks",
     description:
-      "This is an app that works similarly to Facebook. You can add/remove friends, create posts with images, and comment on those posts. This implements the JamStack, with the backend hosted on Heroku and the frontend on Netlify.",
-    techDescription: "Built using NodeJS, Express, MongoDB, Firebase, React.",
+      "This is an app that works similarly to Facebook. You can add/remove friends, create posts with images, and comment on those posts. This implements the JamStack, with the backend hosted on Fly.io and the frontend on Netlify. In addition, you can sign into the app using your Facebook credentials.",
+    techDescription:
+      "Built using NodeJS, Express, PassportJS, MongoDB, Firebase, React.",
     links: {
       repository: "https://github.com/cyanChill/OdinWorks",
       liveSite: "https://odin-works.netlify.app/login",
